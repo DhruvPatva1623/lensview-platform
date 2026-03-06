@@ -430,35 +430,48 @@ export default function DiscoveryPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[800px] bg-primary rounded-full blur-[160px]" />
         </div>
-        <div className="max-w-[800px] mx-auto px-6 relative z-10 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
-            Focus on your craft. <br />
-            <span className="text-primary">We'll handle the rest.</span>
-          </h2>
-          <p className="text-xl text-[var(--text-muted)] mb-12">
-            Join a global network of over 10,000 professional photographers sharing, growing, and building their business together.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-            <Link
-              href="/profile"
-              className="w-full sm:w-auto px-10 py-5 bg-primary text-white text-lg font-bold rounded-full shadow-[0_20px_40px_-10px_rgba(19,164,236,0.4)] hover:scale-105 transition-all text-center"
-            >
-              Create your portfolio
-            </Link>
-            <Link
-              href="/settings"
-              className="w-full sm:w-auto px-10 py-5 bg-white/5 border border-[var(--border)] hover:bg-white/10 text-[var(--text)] text-lg font-bold rounded-full transition-all text-center"
-            >
-              Explore Membership
-            </Link>
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-16">
+          <div className="text-center lg:text-left flex-1">
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tight">
+              Focus on your craft. <br />
+              <span className="text-primary">We'll handle the rest.</span>
+            </h2>
+            <p className="text-xl text-[var(--text-muted)] mb-12 max-w-xl mx-auto lg:mx-0">
+              Join a global network of over 10,000 professional photographers sharing, growing, and building their business together.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 mb-16">
+              <Link
+                href="/profile"
+                className="w-full sm:w-auto px-10 py-5 bg-primary text-white text-lg font-bold rounded-full shadow-[0_20px_40px_-10px_rgba(19,164,236,0.4)] hover:scale-105 transition-all text-center"
+              >
+                Create your portfolio
+              </Link>
+              <Link
+                href="/settings"
+                className="w-full sm:w-auto px-10 py-5 bg-white/5 border border-[var(--border)] hover:bg-white/10 text-[var(--text)] text-lg font-bold rounded-full transition-all text-center"
+              >
+                Explore Membership
+              </Link>
+            </div>
+            <div className="flex flex-wrap justify-center lg:justify-start items-center gap-10 md:gap-20">
+              {[["10k+", "Photographers"], ["2.4M", "Inspiring Works"], ["150+", "Daily Awards"]].map(([n, l]) => (
+                <div key={l} className="text-center">
+                  <p className="text-3xl font-bold mb-1">{n}</p>
+                  <p className="text-sm uppercase tracking-widest text-[var(--text-muted)]">{l}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20">
-            {[["10k+", "Photographers"], ["2.4M", "Inspiring Works"], ["150+", "Daily Awards"]].map(([n, l]) => (
-              <div key={l} className="text-center">
-                <p className="text-3xl font-bold mb-1">{n}</p>
-                <p className="text-sm uppercase tracking-widest text-[var(--text-muted)]">{l}</p>
-              </div>
-            ))}
+
+          {/* QR Code Marketing Block */}
+          <div className="shrink-0 animate-float lg:-mt-10">
+            <div className="p-8 bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[40px] shadow-2xl md:rotate-3 hover:rotate-0 transition-all duration-500 max-w-[320px]">
+              <img src="/qr.png" alt="Scan to join LensView" className="w-full h-auto object-contain rounded-2xl mb-4 bg-white p-4" />
+              <h3 className="text-2xl font-black text-white text-center mb-2">Get the App</h3>
+              <p className="text-white/50 text-sm text-center font-medium leading-relaxed">
+                Scan this code to instantly access the LensView platform on your mobile device.
+              </p>
+            </div>
           </div>
         </div>
       </section>
