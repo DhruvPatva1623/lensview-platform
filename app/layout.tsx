@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { AuthProvider } from "@/components/AuthProvider";
 import { MobileNav } from "@/components/MobileNav";
+import { SplashScreen } from "@/components/SplashScreen";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={`${jakarta.className} antialiased min-h-screen`}>
         <ThemeProvider>
           <AuthProvider>
+            <SplashScreen />
             <div className="pb-16 md:pb-0">
               {children}
             </div>
