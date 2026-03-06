@@ -1,0 +1,229 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════
+   THEME TOKENS  (Tailwind v4 @theme)
+══════════════════════════════════════ */
+@theme {
+  --color-primary: #13a4ec;
+  --color-deep-charcoal: #121212;
+  --color-dark-accent: #1a1a1a;
+  --color-off-white: #f8f9fa;
+}
+
+/* ══════════════════════════════════════
+   CSS VARIABLES  (dark / light switch)
+   Default = dark so SSR matches
+══════════════════════════════════════ */
+:root {
+  --bg: #121212;
+  --bg-card: #1a1a1a;
+  --bg-nav: rgba(18, 18, 18, 0.75);
+  --text: #f8f9fa;
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --border: rgba(255, 255, 255, 0.09);
+}
+
+:root.light {
+  --bg: #f4f6f8;
+  --bg-card: #ffffff;
+  --bg-nav: rgba(244, 246, 248, 0.88);
+  --text: #111827;
+  --text-muted: rgba(0, 0, 0, 0.50);
+  --border: rgba(0, 0, 0, 0.10);
+}
+
+/* ══════════════════════════════════════
+   BASE
+══════════════════════════════════════ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+  min-height: 100vh;
+}
+
+/* ══════════════════════════════════════
+   COMPONENT CLASSES
+══════════════════════════════════════ */
+@layer components {
+  .glass-nav {
+    background: var(--bg-nav);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .glass-card {
+    background: rgba(255 255 255 / 0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255 255 255 / 0.10);
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  :root.light .glass-card {
+    background: rgba(0 0 0 / 0.03);
+    border: 1px solid rgba(0 0 0 / 0.10);
+  }
+}
+
+/* ══════════════════════════════════════
+   UTILITY CLASSES
+══════════════════════════════════════ */
+@layer utilities {
+  .masonry-grid {
+    columns: 2;
+    column-gap: 1.5rem;
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* ── Animations ── */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes slowZoom {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slow-zoom {
+    animation: slowZoom 20s linear infinite alternate;
+  }
+
+  /* Delay utility classes */
+  .delay-75 {
+    animation-delay: 75ms;
+  }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-150 {
+    animation-delay: 150ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* Masonry responsive (outside @layer so @media works) */
+@media (min-width: 768px) {
+  .masonry-grid {
+    columns: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    columns: 4;
+  }
+}
+
+@media (min-width: 1536px) {
+  .masonry-grid {
+    columns: 5;
+  }
+}
+
+/* ══════════════════════════════════════
+   CUSTOM SCROLLBAR
+══════════════════════════════════════ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}

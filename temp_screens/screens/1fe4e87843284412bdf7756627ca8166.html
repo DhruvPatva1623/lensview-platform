@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LensView | Discovery Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .masonry-grid {
+            columns: 2;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 768px) { .masonry-grid { columns: 3; } }
+        @media (min-width: 1024px) { .masonry-grid { columns: 4; } }
+        @media (min-width: 1536px) { .masonry-grid { columns: 5; } }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-6 lg:px-10 py-3">
+<div class="max-w-[1800px] mx-auto flex items-center justify-between gap-8">
+<!-- Logo & Search -->
+<div class="flex items-center gap-8 flex-1">
+<div class="flex items-center gap-3 shrink-0">
+<div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-2xl">camera</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight hidden sm:block">LensView</h1>
+</div>
+<div class="flex-1 max-w-xl">
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="block w-full pl-11 pr-4 py-2.5 bg-slate-100 dark:bg-slate-800/50 border-none rounded-full text-sm focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-slate-500 dark:placeholder:text-slate-400" placeholder="Search for inspiration, photographers, or tags..." type="text"/>
+</div>
+</div>
+</div>
+<!-- Nav Links & Profile -->
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-8 text-sm font-semibold">
+<a class="text-primary" href="#">Explore</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Community</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Analytics</a>
+</nav>
+<div class="h-6 w-px bg-slate-200 dark:bg-slate-800 hidden lg:block"></div>
+<div class="flex items-center gap-3">
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-primary rounded-full border-2 border-background-light dark:border-background-dark"></span>
+</button>
+<button class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition-colors">
+<span class="material-symbols-outlined">chat_bubble</span>
+</button>
+<div class="size-10 rounded-full overflow-hidden border-2 border-transparent hover:border-primary cursor-pointer transition-all">
+<img class="w-full h-full object-cover" data-alt="Professional photographer user profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYgxy2-sXzpEER0TwK0pc7X7kkUga7StH5pDzJ8TUI54tauK8eee3bXqA_qXOcheJtSRrt7zahb0HYLLPr75QigzctdYWYnoAUWKlbx-KyR0ZSgF37OzplYYSs3VXdD-HVdbDbl2tQs-GpDBugCTDa52T3IIAUtlrlBRhUKAAVwzX-3eKHz3NyNmnfrNbBTnoFVBHDXHdJDsk97VrBIc-cZmjz6Y4zf2uoa_vsHmLBAXt2xkUr5a576-QLLSUXbAF2o7Jl56zojlU"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Category Filter Chips -->
+<div class="w-full px-6 lg:px-10 py-4 bg-background-light dark:bg-background-dark">
+<div class="max-w-[1800px] mx-auto flex items-center gap-3 overflow-x-auto no-scrollbar pb-2">
+<button class="px-5 py-2 rounded-full bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-sm font-semibold whitespace-nowrap">All Discoveries</button>
+<button class="px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-medium transition-colors whitespace-nowrap">Architectural</button>
+<button class="px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-medium transition-colors whitespace-nowrap">Cinematic Portrait</button>
+<button class="px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-medium transition-colors whitespace-nowrap">Street Photography</button>
+<button class="px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-medium transition-colors whitespace-nowrap">Minimalist Landscape</button>
+<button class="px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-medium transition-colors whitespace-nowrap">Macro Wildlife</button>
+<button class="px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-medium transition-colors whitespace-nowrap">Aerial Urban</button>
+<button class="px-5 py-2 rounded-full bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-medium transition-colors whitespace-nowrap">Fashion Editorial</button>
+</div>
+</div>
+<!-- Main Discovery Feed (Pinterest Masonry Style) -->
+<main class="flex-1 px-6 lg:px-10 pb-20">
+<div class="max-w-[1800px] mx-auto masonry-grid">
+<!-- Masonry Items -->
+<div class="masonry-item relative group cursor-zoom-in">
+<div class="rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105" data-alt="Breathtaking mountain lake landscape during sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjB9oSgr6pqU-YuSgZyffM88IliyIG5mvzczVO6maHHApOPGeDbGv3TTcdqX2olj3NtOTavUOnIQgJgy6NTfuyPQNeIpgMrdyjZ2y65H05c3evTj1zlC3fvojCx8ILtGkRigyvHZ-tJWba-vMVEoR4PXRHcxPUzhM_aCA6oxMb8hk58jQfRXcz9h_TDJFAVvZaqA-XURej759-xq8lMw4k2M0MQp3ieaby2G7pkxMpqd2izpNVRnJxSPVMUdL_HpgdbgxMuGsXmww"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-4 text-white">
+<div class="flex justify-end gap-2">
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+<button class="size-10 rounded-full bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full overflow-hidden border border-white/40">
+<img class="w-full h-full object-cover" data-alt="Photographer portrait profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Rt6qL2sp48AOLLNuwOpvWbsOAZQk_0No6PwvWNLfaefHXtw5P7b3YcbFewZT0yEuGWoynOq9Rmr4bnsPJXczKg9ykEXIDWJdUhSF9Xk94OqnfySebw62m0N_bCvOBYpIs_CpIsZyd5lsuO4GgxtbkRSZ7BOvovu6CjGCIAvKhkW7DcaQnhdvlQWvtMAbYj_fSJz2MLMSx9y0TV-6hAl-rV3gv1inKxu9cOGAuYGYreooQksd8DXrxB0zaVkbdK9S_26SGBIKgEk"/>
+</div>
+<span class="text-sm font-medium">Julian Rivers</span>
+</div>
+<button class="text-white/80 hover:text-white">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group cursor-zoom-in">
+<div class="rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105" data-alt="Dramatic bridge architecture in San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuj8KPTSmW03CdTlKlyJlFtjjyO-lIC776eJBQONqXYN5CXpcSRtL9gDfuwoQHTUxQ1UmNl4ysy2ESmBTpeEqFTXe_WVElloI9QFeRTH9vRH7NQi5XF9nn8L8MriIxiJ921T9AsBSc5queFelf9m8wdQLKPcaXO86e_sVaL8v4Z0S1IJ2upz0J8WIULNm-xX4ejG1kE5UteN6Bfn2JkLSX8iS7TIXm3s9mNmUWR9eDt7WHKtWk8FQXqq75xSYMn_BCj8DKo6sZ3_w"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-4 text-white">
+<div class="flex justify-end gap-2">
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full overflow-hidden border border-white/40">
+<img class="w-full h-full object-cover" data-alt="Elena Vance profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtgEyxilLn6EOx1KJESyJ4l9scc-fWDCz-q2vsyEkaWLSThLqXrJDa78gSeH8eNPNevnuEuxQc5HxVNm91NjsrR5pBWAZfau778AWfgFvlceqpBwGQ8Bkz4jXviBcmWs_C1jlsbhbvCfwRDl_8PplouIDPrJNpclp9ilzY-9q-i9qCeifYXI2lOfZFlUdhp4bcyOj6eXxGP6NKaUy53fo54mdMcBBibueiyISOn5L8NtFjtv0ojyxmHQhcuCJ6KwHp-z7KBupGSTU"/>
+</div>
+<span class="text-sm font-medium">Elena Vance</span>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group cursor-zoom-in">
+<div class="rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105" data-alt="Morning mist over a lush green forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwfBFdT13HjOL9uIDWX93kjUgq5wobxCe7KJczGxj69BXxHZt9l2R0fJX1e6kYj-KdyxuBoU13VSZMt94BIlcwJQlDRE8RM9rsyU667jbyPNvtqdT-0GSUV3LjQaB4XQT1CcjkwPqAuNBRFRwKt-Ll2z_Gez1zBcWcjKH-5SXVszE-m5Zz3TbTu7z0j8m2K4rs6QqPbuelhsvH52yMmujlSsYSkx3UA-FOuCvyJ_b1vfRChUtPq8uGFhLnZ-E-A1yO0cRuoaCVzjE"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-4 text-white">
+<div class="flex justify-end gap-2">
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full overflow-hidden border border-white/40">
+<img class="w-full h-full object-cover" data-alt="Marcus Thorne profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIdkBtXFO-klhxavvs3u3jZImP7hJgc3DdEtm3lu0f036lOXdPYHdQWQGDMCybkzaJwBq3nAzhSIp4IwuKWlQ_EUhLGtjJYk4ZISHH4LbaB8f151tjTlreV9S_-J6SfV7MX9hit3D5YR_wwdIhpVDvvLtkiGtzfKo6WsMQ4PJHdg_6ek1_MiEo3CGx-Kh6eQtS2zfiae_LF8T2vv7xvrAgdz-jTjV_EFjmhgbscBNLxNSBLx4jEzP5tLbphA6pgPQ_a3netH9Dq2w"/>
+</div>
+<span class="text-sm font-medium">Marcus Thorne</span>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group cursor-zoom-in">
+<div class="rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105" data-alt="Futuristic electronic circuit board detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZfCexmNHlT_Oay_QrleOYjTwNXeBayCR7UKbAPeN7AbzKxeZAZ-bW2ZY5v4sMRIKK94DWaiz_ROncgd9EYGwZMClWT0MKEUgzJ0eLqdovHCV1_76IM_mKzon8VL_rG_OYBtOD0__43iTnKxGB15b5MDhzArA_C9ROwEC25QJdoKFDaMBTBCkl3cO6jYn5SG1-eABC5iKcWnF43GAZRMac6_FMyleQHVayFTFgwLrb40Os1lWYr7cuHnFSN4z-hv6cCKHqm9RsvEc"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-4 text-white">
+<div class="flex justify-end gap-2">
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full overflow-hidden border border-white/40">
+<img class="w-full h-full object-cover" data-alt="Sarah Lee profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY_y2ciZWIyOlxprheLRfMP6jV7wt-xkhbvC5fElb7cPpYH6PwWaNOxOvfrFUkv_3vk3B_Ko6pnQPk2qzJdZhKqWxy_pPdVp2wdUQ6omtMMX5iY96b6mBRLoWhCOVzZxYdmce0Dy7OXMyfcVR2IWiJg-XIq5yO8aUDI0he3792CpfeoCYyehNwoklH5GZMYOgc90gE7nAt6Iw5NWYOy6tbjXw01tr5igowo5MxSIGSwKvYKwpJyo0oT5MRHCQCgAzXXiaPmx5WpoQ"/>
+</div>
+<span class="text-sm font-medium">Sarah Lee</span>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group cursor-zoom-in">
+<div class="rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105" data-alt="Beautiful turquoise water and wooden boat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGACEe4JgwSluEDv6w0Q_aO-eAdx4T4e4n1V1SdTT4Oh9kYf_BIR8vb-vkTChfbfRQbi8JGocICZYd8idrYfwfuZiPqoqfzsDUuOiQqO8CXfsalzhVd0cCHdyWNuUiRNU65h3WDiGdFu4fwMXEGC-Dd0hiApypWvkAX3BAcWpnkZLz_BHH2lS_2r4rB_9Ou8ZhlquFa9Vy1y7qr2vyNrlh1ZDpKquYfbr1Crh2DBTQSUEPtkd4_fXwli6T8C3TPOAnqTgt4ZUpvJY"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-4 text-white">
+<div class="flex justify-end gap-2">
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full overflow-hidden border border-white/40">
+<img class="w-full h-full object-cover" data-alt="Luna Rose profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANPP-sIcHfwcQzwCIIvHAzZ9fKbIjfzge9PNgB0UCFn0OsHScPVSCgcvTzgaVD_xR_3fyJT6USgqyRSouANqvS2qUrGTqhlQ_6mvuZ9auq_3UeM4H2h1FxE2sRHoSix7htNjsg7GdPRgwG_eeK7pv20ZWX2Jlxut__Yq-LsbMe4yHXwqadsT26pzQuCGEglqXH-Ov1hGDlAGaWncfcb0a3AhFxc5THi-XX6rfxVoRSqsjL8OkKFDTrDcJdThAs1eTlayvH-wflqwM"/>
+</div>
+<span class="text-sm font-medium">Luna Rose</span>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group cursor-zoom-in">
+<div class="rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105" data-alt="Majestic tiger staring in the jungle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVtRBkVoktNBeBDHo6mW9xdXu_Eias-hf6E4BDZeldfDIb2GxUYmQ7Odwf3W21toQ29-dsA_0HJ_wew-eyebHuuT-9bqg0DwE5z2YyWGJxI7eITOLqb1qvSheCaZO-GXqMkSP7DqGkQWy8v-DLFUFc-lIhavM3etJPcmjadDA-edg-KM91Go-dsca9ds_57DR20GIthzz_t5iI5LbM_kCZtUrlxcrvfqj4ZWIa9cakYNwI_af8wTOIyUKhxqE5LJNnbIsRw2hLRzs"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-4 text-white">
+<div class="flex justify-end gap-2">
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full overflow-hidden border border-white/40">
+<img class="w-full h-full object-cover" data-alt="Victor Kane profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5NCpn40sRnqIaaA3R2p3_xz2ycSRpuPcqlUlZtfqxaJxxCmVZG0I9rFtpq6Visj6XnwAZdwWb2hmIXP-u_JmIcPVqe3uDr7DSg5WNbg_ytQPPToEpLRe_eoxr6gFCBZzaKpvLeJXKTtuG6Dh-SMM4s2qpWjcaUAKm-6JQ9ALF7DQE0uomOEBqooxlD-h8Hmz7tzuqRRKm3taOuqCRzz3JE0cyuib6JZs22N65OHdkBduZuz6sCKSH6Gq_o2am8Af6xPjR4dZSD7E"/>
+</div>
+<span class="text-sm font-medium">Victor Kane</span>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group cursor-zoom-in">
+<div class="rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105" data-alt="Starry night sky over sharp mountains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPInDQeQCXFIps3qudMCYryhISxDA5cWH85OkBKaevjzmkFm76gy9HpZZXR82TnjTJy6ysu75Qk79XdwrY_N48-zwtF77IbU8Ki2Kw9kl4zWCMd8w0agega73GzHurwZRXq-DxmASdLSTpffl8XpjVFeMS_tyPDwOeAqFQkTy0H50l_wO-XpgjDA7nL6Nj5yj8o1yK7yn_WR7Kwp7_ZsRIfrhxCU3W-ouTgVO9RuLsqRAcN1d0O9IVA9bj-S6qJgl1o3E7mlG8DzY"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-4 text-white">
+<div class="flex justify-end gap-2">
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full overflow-hidden border border-white/40">
+<img class="w-full h-full object-cover" data-alt="Emma Stone profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh9Huk4VFDFZqcPU0VJo-o14MZLVw1Gkmp15MDWRoI2bTMKLJ1Y64wpRzPEdU3SuO5FMOs9Wecj2sfAzF1UEW91twwua_PUc9VqQbDMoMMBOXoXj657_xvsVMmuJlABHuN2rEk3teHVsGL50cDbUgZFv7bWksaTfTm3vg9ZZK6C2orbNzs4Aotkj-2puc4UXHHhjRtIwFCzAqHBd_AxRAWhkKY1CQ8-hxH1lYQqU3EB4GdEdOsnj0WnDq35TyCbAvGul331LF7VMw"/>
+</div>
+<span class="text-sm font-medium">Emma Stone</span>
+</div>
+</div>
+</div>
+</div>
+<div class="masonry-item relative group cursor-zoom-in">
+<div class="rounded-xl overflow-hidden bg-slate-200 dark:bg-slate-800">
+<img class="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105" data-alt="Vast mountain range with snow peaks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-Ivr1-E8jRUyfRUNyI6RMjzRSlyCWjmHdCiloEjyrNH_cAWvI1-6ahZT5FOcjLyoL2aVheJ53KarUhmEveAhbChyarr7AmkXtv5DTDfhv5fPudf8iVGK8i4jeXZHfjiwQW6YAkc2QoAXoSQWNTNT12OfRkKdjpclqRaqLlZzScqTqRLf9Vq4YilP_v3QYLPYIyU4VzVFjwE6y-NvlLLt_kM168bhei-_nNSvCCY5YUUAryvFp4g7fCdf3Em4VYnzmPkDYcNn1ggk"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-between p-4 text-white">
+<div class="flex justify-end gap-2">
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">bookmark</span>
+</button>
+<button class="size-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center hover:bg-white/40 transition-colors">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-6 rounded-full overflow-hidden border border-white/40">
+<img class="w-full h-full object-cover" data-alt="Chris Evans profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv6OZVMfDPDzMEuSFcUKVkdNX5hZ2Tw1SxMFn8kZo7epWgFSgzlCE4Owu8C833I-TZuzNpwSqRSFGoNtF_sVhYuuHHIvXtDUYTIGu6J2XAVUaQVtTaTnW6dL_26MPyYDuwi-8hBde_uPyjHQVU-EkoLqGTz_2njfkTYIgR0jUwAAx2GrxND62kbZwKs_pQTGIrMtCvJBBivlykAVSxsC_FmI8SayZS7mZtbQKGrLFsKAtS-kKadTxFDd_iYseY9Hv4ku0zNADArZ0"/>
+</div>
+<span class="text-sm font-medium">Chris Evans</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button: Upload -->
+<div class="fixed bottom-8 right-8 z-40">
+<button class="flex items-center gap-3 px-6 py-4 bg-primary text-white rounded-full shadow-2xl shadow-primary/40 hover:scale-105 active:scale-95 transition-all group">
+<span class="material-symbols-outlined font-bold">add</span>
+<span class="font-bold tracking-wide">Upload Work</span>
+</button>
+</div>
+<!-- Footer / Load More -->
+<footer class="w-full py-10 flex flex-col items-center gap-6 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50">
+<button class="px-8 py-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 font-semibold transition-colors">
+                Load more inspiration
+            </button>
+<div class="flex gap-6 text-sm text-slate-500">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Careers</a>
+<a class="hover:text-primary transition-colors" href="#">Guidelines</a>
+</div>
+<p class="text-xs text-slate-400">© 2024 LensView Photography Platform. All rights reserved.</p>
+</footer>
+</div>
+</body></html>

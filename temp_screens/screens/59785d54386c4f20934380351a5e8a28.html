@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Photographer Analytics Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="flex min-h-screen">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 flex flex-col fixed inset-y-0 bg-background-light dark:bg-background-dark z-50">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="h-10 w-10 rounded-full bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined">camera</span>
+</div>
+<div>
+<h1 class="text-base font-bold leading-tight">Studio Pro</h1>
+<p class="text-slate-500 text-xs font-medium">Professional Plan</p>
+</div>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-sm font-medium">Portfolio</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-sm font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-sm font-medium">Community</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-sm font-medium">Settings</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6">
+<button class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-2.5 rounded-lg text-sm transition-all shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">cloud_upload</span>
+                    Upload Photo
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 ml-64 min-h-screen">
+<!-- Header -->
+<header class="sticky top-0 z-40 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-8 py-4 flex items-center justify-between">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50 placeholder:text-slate-500" placeholder="Search analytics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full ring-2 ring-background-light dark:ring-background-dark"></span>
+</button>
+<div class="h-8 w-px bg-slate-200 dark:border-slate-800"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right hidden sm:block">
+<p class="text-sm font-bold leading-none">Julian V.</p>
+<p class="text-xs text-slate-500">Curator</p>
+</div>
+<img alt="User Avatar" class="h-10 w-10 rounded-full object-cover border-2 border-primary/20" data-alt="Close up portrait of a professional male photographer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbrXyf81AID9VbfrjCaKsCZ20P_3OevQzlzcvGP5cajolpM3HpfoYRbGQvt5NPVBmmJgx8F8dF4DGVpYSj4Gm5OHqNJv9wCeb_x6ra5LPyP1SEfzSNBJDYm51kKuKLvK6cTkcwAL3R-4G_k1Gvwq_GtBOXcNKZTGlTCXNu5g3Hb41uTLs6rDle9-KeJ-KaorMH4knJVwT6z8SwAircZB8fy6JDldFpgMItFBC2TljrFX0TWs_jn8usDtaZUPVkR5nxw5lFyGSBrXU"/>
+</div>
+</div>
+</header>
+<div class="p-8">
+<!-- Welcome Section -->
+<div class="mb-8">
+<h2 class="text-3xl font-extrabold tracking-tight">Performance Overview</h2>
+<p class="text-slate-500 mt-1 font-medium">Real-time insights for your photography portfolio</p>
+</div>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 p-6 rounded-xl relative overflow-hidden group">
+<div class="flex justify-between items-start relative z-10">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-semibold">Total Views</p>
+<h3 class="text-3xl font-bold mt-1">128.4K</h3>
+<p class="text-emerald-500 text-sm font-bold flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                                    +12.5%
+                                </p>
+</div>
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">visibility</span>
+</div>
+</div>
+<!-- Sparkline placeholder -->
+<div class="mt-4 h-12 w-full opacity-30">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 30">
+<path class="text-primary" d="M0 25 Q 10 20 20 22 T 40 10 T 60 18 T 80 5 T 100 15" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 p-6 rounded-xl relative overflow-hidden group">
+<div class="flex justify-between items-start relative z-10">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-semibold">Engagement Rate</p>
+<h3 class="text-3xl font-bold mt-1">4.2%</h3>
+<p class="text-emerald-500 text-sm font-bold flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                                    +0.8%
+                                </p>
+</div>
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">favorite</span>
+</div>
+</div>
+<div class="mt-4 h-12 w-full opacity-30">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 30">
+<path class="text-primary" d="M0 15 Q 15 25 30 15 T 60 20 T 90 10 T 100 5" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 p-6 rounded-xl relative overflow-hidden group">
+<div class="flex justify-between items-start relative z-10">
+<div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-semibold">New Followers</p>
+<h3 class="text-3xl font-bold mt-1">1,240</h3>
+<p class="text-rose-500 text-sm font-bold flex items-center gap-1 mt-2">
+<span class="material-symbols-outlined text-xs">trending_down</span>
+                                    -2.1%
+                                </p>
+</div>
+<div class="p-2 bg-primary/10 rounded-lg">
+<span class="material-symbols-outlined text-primary">person_add</span>
+</div>
+</div>
+<div class="mt-4 h-12 w-full opacity-30">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 30">
+<path class="text-primary" d="M0 5 Q 20 10 40 25 T 70 15 T 100 28" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+<!-- Main Chart -->
+<div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-800 p-8 rounded-xl mb-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+<div>
+<p class="text-sm font-semibold text-slate-500">Portfolio Performance Over Time</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h3 class="text-4xl font-black">842,000</h3>
+<span class="text-emerald-500 text-sm font-bold">+15.2% vs last month</span>
+</div>
+</div>
+<div class="flex bg-slate-200 dark:bg-slate-700 p-1 rounded-lg">
+<button class="px-4 py-1.5 text-xs font-bold bg-white dark:bg-slate-600 rounded-md shadow-sm">30 Days</button>
+<button class="px-4 py-1.5 text-xs font-bold text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">90 Days</button>
+<button class="px-4 py-1.5 text-xs font-bold text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">1 Year</button>
+</div>
+</div>
+<div class="relative h-[300px] w-full mt-4">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 300">
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#13a4ec" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#13a4ec" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,250 L100,210 L200,230 L300,120 L400,160 L500,80 L600,140 L700,60 L800,100 L900,40 L1000,20 L1000,300 L0,300 Z" fill="url(#chartGradient)"></path>
+<path d="M0,250 L100,210 L200,230 L300,120 L400,160 L500,80 L600,140 L700,60 L800,100 L900,40 L1000,20" fill="none" stroke="#13a4ec" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+</svg>
+<div class="flex justify-between text-xs text-slate-400 mt-4 px-2">
+<span>May 01</span>
+<span>May 07</span>
+<span>May 14</span>
+<span>May 21</span>
+<span>May 28</span>
+<span>Jun 01</span>
+</div>
+</div>
+</div>
+<!-- Top Performing Photos -->
+<div class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-xl font-bold">Top Performing Photos</h3>
+<button class="text-sm font-bold text-primary hover:underline">View All Gallery</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+<!-- Photo Row 1 -->
+<div class="flex items-center gap-4 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all">
+<img alt="Mountain" class="w-16 h-16 rounded-lg object-cover" data-alt="Stunning mountain landscape with clear blue lake reflection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvcBUf8J5K80PD-5Uj2vEiwFGya9JbpXYgdHTyP8O_TCqlOMGNdfwsh7ZhhPPbbkSjR3v3kvjbjl_XUK2WoA0yTR5C17PiYPw62i5YICgqTucVeXQIae0W0H8XtowwQGP9RPbs1c4KOxZRZrLfR--0buF6XzrwCrAG7jtAeFk14lz1AO8RI0X0V2Wla-FSLEC9x6WPMegl3KcKfIvB8mBWKW-qPHymvovwMu79niOBdhtQce22Gg5YCD8eIGfZYofMk2J64Ac8jjU"/>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Alpine Reflection at Dawn</h4>
+<p class="text-xs text-slate-500">Landscape Category</p>
+</div>
+<div class="flex items-center gap-6 px-4">
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Views</p>
+<p class="text-sm font-bold">42.1K</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Saves</p>
+<p class="text-sm font-bold text-primary">8.4K</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Rank</p>
+<p class="text-sm font-black text-amber-500">#1</p>
+</div>
+</div>
+</div>
+<!-- Photo Row 2 -->
+<div class="flex items-center gap-4 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all">
+<img alt="Wildlife" class="w-16 h-16 rounded-lg object-cover" data-alt="Macro photography of a colorful forest butterfly on a leaf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOK7UdEO2Clz7sZetXzCsURJYp22WOPrUYwUkpQ2lP-6eWZOfSpKuWK0Ds3hiisd7adUQGhL76KSM1hHDVA2hEla6S2ZOaevT5OtW1xbueixQZA6Va_f9eJyXrqapBdJpoE2uGLnEKnt58P-GmMk9-76QW563AdN20JURFlikLTs2GOOdMPnLJxogRJ--OOaV4eRYmVhV5K6L3B5sd-todZxWsWqFNSmQ5OqiBgQeFreBp7sO6WfTVQE0u2j_FYimiZStUgyqlDfg"/>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Neon Wings Butterfly</h4>
+<p class="text-xs text-slate-500">Macro Category</p>
+</div>
+<div class="flex items-center gap-6 px-4">
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Views</p>
+<p class="text-sm font-bold">38.5K</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Saves</p>
+<p class="text-sm font-bold text-primary">5.2K</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Rank</p>
+<p class="text-sm font-black text-slate-400">#2</p>
+</div>
+</div>
+</div>
+<!-- Photo Row 3 -->
+<div class="flex items-center gap-4 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all">
+<img alt="Architecture" class="w-16 h-16 rounded-lg object-cover" data-alt="Minimalist modern architecture with sharp shadows and concrete" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdQs7P6AHMhlWdOd7NFa_mrtzJMaqrfo7HJRpZI_LtF0wJBI-KXMhkFD0T2710eBt9GdiXDbwthpWYPENhPscBUx0p_qfj4h7Mc1N-PtDY5HJ9RexhjaZzjXkobpCIE-GqKkqA7FZY2JY61AVbXyimoq6J6vUv0qfJPHS-yYYrnC8ZqxEsWgjmEw3BO4g3-9SgTCsA56ggvULIQ30dQkOiVTUeV49kmtSJO3Rdxq8UEeludBL71EqIYUOczATIJQ7f_jlB6Zo3EqQ"/>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Geometric Concrete Harmony</h4>
+<p class="text-xs text-slate-500">Architecture Category</p>
+</div>
+<div class="flex items-center gap-6 px-4">
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Views</p>
+<p class="text-sm font-bold">29.8K</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Saves</p>
+<p class="text-sm font-bold text-primary">4.1K</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Rank</p>
+<p class="text-sm font-black text-orange-400">#3</p>
+</div>
+</div>
+</div>
+<!-- Photo Row 4 -->
+<div class="flex items-center gap-4 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-primary/50 transition-all">
+<img alt="Portrait" class="w-16 h-16 rounded-lg object-cover" data-alt="Cinematic street portrait with urban neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8rSanESVIJh0eShs-k-S0kuVTRb1moYCPNvB9ESlHGfoDF73HdMWFH6HZxN2SB0xGiXxh_DX2mFGrsbfhWQpH6w0_RNzPRkgJ9Dnd_lsc0ElU8V8-pu9hqU80d2M45nccY0O5QEDCDFzfUAjwfHgYTMGVqo336pMQ_PQUtyZcEgIIwB1Ux0pQRTxYqCcrQkKhY0xp5mm7DUJp3QyvTBfLxwZenKOjlQisNozgCI2pVkQgrmaCXps-xV-j_Zm_7CfYRHRRrxnSZ40"/>
+<div class="flex-1 min-w-0">
+<h4 class="text-sm font-bold truncate">Neon City Pulse</h4>
+<p class="text-xs text-slate-500">Street Portrait</p>
+</div>
+<div class="flex items-center gap-6 px-4">
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Views</p>
+<p class="text-sm font-bold">24.2K</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Saves</p>
+<p class="text-sm font-bold text-primary">3.9K</p>
+</div>
+<div class="text-center">
+<p class="text-xs text-slate-500 font-medium">Rank</p>
+<p class="text-sm font-black text-slate-500">#4</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

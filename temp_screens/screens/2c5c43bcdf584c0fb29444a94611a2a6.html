@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Studio Upload and Publish | LensView</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                        "panel-dark": "#16252d",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 6px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: #334155;
+                border-radius: 10px;
+            }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: #475569;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased h-screen overflow-hidden flex flex-col">
+<header class="z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-6 py-3">
+<div class="max-w-[1600px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">filter_tilt_shift</span>
+<h2 class="text-xl font-extrabold tracking-tight">LensView Studio</h2>
+</div>
+<div class="h-6 w-px bg-slate-200 dark:border-slate-800"></div>
+<nav class="flex items-center gap-6 text-sm font-semibold">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-primary" href="#">Upload</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">Library</a>
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-400 hover:text-white p-2">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="size-9 rounded-full border border-primary/20 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNl95N3h8fx0t6-iPqPMyP3cSlqWy9jDe_-ZEqdOphvuQbrOBn1yIjQpv7K2x82_Juh7YZHQgb8P2t_bFLz9c22r4KYgQfVDsOSd7dhDjo0dECOrVIDOi-bSLcb9tmF6Y9C9Lf70ouUAyfGOvs-RY-k0heFZFErg7mRSGHeVD3j-5NeLki4czfoBDoDHHi_55NP0G16iqLByIx1lk1dGu7NIIwZnWZ_LtsRtpJgDO-p9Y5Ca6Qrczx5x9pNds9V6eCLhZUdVOPzuE')"></div>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-hidden flex flex-col max-w-[1600px] mx-auto w-full">
+<div class="flex-1 flex overflow-hidden">
+<div class="flex-1 p-8 overflow-hidden flex flex-col">
+<div class="flex items-center justify-between mb-6">
+<h1 class="text-2xl font-bold">Upload New Work</h1>
+<div class="flex items-center gap-2 text-xs text-slate-400 font-medium bg-slate-800/50 px-3 py-1.5 rounded-full border border-slate-700">
+<span class="size-2 rounded-full bg-green-500"></span>
+                    Ready for Publishing
+                </div>
+</div>
+<div class="flex-1 relative group cursor-pointer">
+<div class="absolute inset-0 border-2 border-dashed border-slate-700 rounded-2xl flex flex-col items-center justify-center bg-slate-800/20 group-hover:bg-slate-800/40 group-hover:border-primary/50 transition-all overflow-hidden">
+<img alt="Upload preview" class="absolute inset-0 w-full h-full object-contain p-4 opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZnS8bbErO1XqH5yOUUSpcCtaJBNz2L08UIU4vxzlIgHbeCJVxS4LJvUVRo9BO3o5qzKNMf1NxlvBRo8F8zt9f7pUFDlLU7-07NUJJsrZ1l7qDvjBWCYsEkq2XXn9id2Ux121Ofe2tgg13i1jOsAvFMWoOQfwzFHWoFuKK4ozg_3LxdM9PBQosk1O7kB_-qYthjF9hbv5OQEbXx2SAW8XB_E3Jp84oZLNmgJXHjQAx_qwUQrhSZNO55d2To92mqbZSQfM6Vpr0rLM"/>
+<div class="absolute inset-0 flex flex-col items-center justify-center bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white text-black px-6 py-2.5 rounded-lg font-bold flex items-center gap-2 hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined">sync</span>
+                            Replace Photo
+                        </button>
+<p class="text-white/70 text-sm mt-3 font-medium underline">Remove selection</p>
+</div>
+</div>
+<div class="absolute bottom-6 left-6 flex gap-2">
+<div class="bg-black/70 backdrop-blur-md text-white px-3 py-1.5 rounded-lg text-xs font-medium border border-white/10">RAW</div>
+<div class="bg-black/70 backdrop-blur-md text-white px-3 py-1.5 rounded-lg text-xs font-medium border border-white/10">61.2 MP</div>
+<div class="bg-black/70 backdrop-blur-md text-white px-3 py-1.5 rounded-lg text-xs font-medium border border-white/10">14-bit</div>
+</div>
+</div>
+</div>
+<aside class="w-[450px] border-l border-slate-200 dark:border-slate-800 bg-background-light dark:bg-panel-dark flex flex-col">
+<div class="flex-1 overflow-y-auto custom-scrollbar p-8 space-y-8">
+<div class="space-y-4">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary/80">Details</h3>
+<div class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-400 ml-1">Title</label>
+<input class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/50 transition-all text-sm font-medium" type="text" value="Silent Waters"/>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-400 ml-1">Description</label>
+<textarea class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/50 transition-all text-sm font-medium resize-none" rows="4">A serene capture of the misty morning at the glacial lake in Southern Iceland. The mirror-like reflection was achieved with a 30-second long exposure.</textarea>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-400 ml-1">Tags (separated by commas)</label>
+<div class="flex flex-wrap gap-2 p-2 bg-slate-100 dark:bg-slate-800 rounded-xl min-h-[44px]">
+<span class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-md flex items-center gap-1 border border-primary/20">Landscape <i class="material-symbols-outlined text-xs cursor-pointer">close</i></span>
+<span class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-md flex items-center gap-1 border border-primary/20">Iceland <i class="material-symbols-outlined text-xs cursor-pointer">close</i></span>
+<span class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-md flex items-center gap-1 border border-primary/20">Minimal <i class="material-symbols-outlined text-xs cursor-pointer">close</i></span>
+<input class="flex-1 bg-transparent border-none p-1 text-xs focus:ring-0" placeholder="Add tag..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary/80">Camera Info</h3>
+<span class="text-[10px] text-green-500 font-bold bg-green-500/10 px-2 py-0.5 rounded border border-green-500/20">AUTO-FILLED</span>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-slate-100 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-700/50">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Camera</p>
+<p class="text-sm font-semibold">Sony Alpha 7R V</p>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-700/50">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Lens</p>
+<p class="text-sm font-semibold">FE 16-35mm F2.8 GM II</p>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-700/50">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Aperture</p>
+<p class="text-sm font-semibold">f/8.0</p>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-700/50">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Shutter</p>
+<p class="text-sm font-semibold">30s</p>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-700/50 text-center">
+<p class="text-[10px] font-bold text-slate-500 uppercase">ISO</p>
+<p class="text-sm font-semibold">100</p>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800/50 p-3 rounded-xl border border-slate-700/50 text-center">
+<p class="text-[10px] font-bold text-slate-500 uppercase">Focal Length</p>
+<p class="text-sm font-semibold">16mm</p>
+</div>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="text-sm font-bold uppercase tracking-widest text-primary/80">Publishing Options</h3>
+<div class="space-y-4">
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-400 ml-1">Category</label>
+<select class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/50 text-sm font-medium appearance-none">
+<option>Landscape &amp; Nature</option>
+<option>Street Photography</option>
+<option>Portraiture</option>
+<option>Fine Art</option>
+<option>Architecture</option>
+</select>
+</div>
+<div class="space-y-1.5">
+<label class="text-xs font-semibold text-slate-400 ml-1">Licensing</label>
+<select class="w-full bg-slate-100 dark:bg-slate-800 border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/50 text-sm font-medium">
+<option>Commercial Use (Rights Managed)</option>
+<option>Creative Commons (Attribution)</option>
+<option>Non-Commercial</option>
+<option>Public Domain</option>
+</select>
+</div>
+<div class="flex items-center justify-between p-3 bg-slate-800/30 rounded-xl border border-slate-700/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="text-sm font-medium">Add location data</span>
+</div>
+<button class="text-xs font-bold text-slate-400">ADD</button>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark/80 backdrop-blur-sm">
+<div class="flex flex-col gap-3">
+<button class="w-full bg-primary hover:bg-primary/90 text-white py-4 rounded-xl font-bold shadow-lg shadow-primary/20 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">send</span>
+                        Publish to Feed
+                    </button>
+<div class="grid grid-cols-2 gap-3">
+<button class="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 py-3 rounded-xl font-bold transition-all text-sm">
+                            Save as Draft
+                        </button>
+<button class="border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 py-3 rounded-xl font-bold transition-all text-sm">
+                            Discard
+                        </button>
+</div>
+</div>
+<p class="text-[10px] text-center text-slate-500 mt-4 uppercase tracking-tighter">
+                    By publishing, you agree to our Content Guidelines and Terms of Service.
+                </p>
+</div>
+</aside>
+</div>
+</main>
+
+</body></html>

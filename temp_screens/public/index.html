@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LensView Hub - Photography Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass-card { background: rgba(16, 28, 34, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: { primary: "#13a4ec", background: "#0a111a" }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-slate-100 min-h-screen">
+    
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 w-full border-b border-white/10 glass-card px-6 lg:px-20 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2 text-primary">
+                <span class="material-symbols-outlined text-3xl">filter_tilt_shift</span>
+                <h1 class="text-2xl font-extrabold tracking-tight">LensView OS</h1>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm font-semibold text-slate-400">
+                <a href="#" class="hover:text-white transition">Platform</a>
+                <a href="#" class="hover:text-white transition">Features</a>
+                <a href="community-social-feed.html" class="hover:text-white transition">Community</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <main class="max-w-7xl mx-auto px-6 lg:px-20 py-20">
+        <div class="text-center max-w-3xl mx-auto mb-20 animate-fade-in-up">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-bold mb-6">
+                <span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                v1.0 is live
+            </div>
+            <h2 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">Your complete <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">photography ecosystem</span></h2>
+            <p class="text-xl text-slate-400">All the tools, pages, and dashboards you need to run an elite photography business. Choose a module below to start.</p>
+        </div>
+
+        <!-- Directory Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            
+        <a href="inspiration-mood-boards.html" class="group relative flex flex-col rounded-3xl overflow-hidden glass-card hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(19,164,236,0.3)]">
+            <div class="aspect-[4/3] w-full overflow-hidden relative">
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex flex-col justify-center items-center text-white backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-5xl mb-2 drop-shadow-lg">open_in_new</span>
+                    <span class="font-bold text-lg drop-shadow-lg">Launch Module</span>
+                </div>
+                <img src="inspiration-mood-boards.png" alt="Inspiration Mood Boards" class="w-full h-full object-cover object-top border-b border-white/10 group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute top-4 left-4 z-20">
+                   <span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur text-xs font-bold border border-white/10 shadow-lg text-white">Module 01</span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">Inspiration Mood Boards</h3>
+                <div class="flex justify-between items-center text-slate-400 mt-4">
+                    <span class="text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Preview</span>
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+    
+        <a href="media-library-manager.html" class="group relative flex flex-col rounded-3xl overflow-hidden glass-card hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(19,164,236,0.3)]">
+            <div class="aspect-[4/3] w-full overflow-hidden relative">
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex flex-col justify-center items-center text-white backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-5xl mb-2 drop-shadow-lg">open_in_new</span>
+                    <span class="font-bold text-lg drop-shadow-lg">Launch Module</span>
+                </div>
+                <img src="media-library-manager.png" alt="Media Library Manager" class="w-full h-full object-cover object-top border-b border-white/10 group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute top-4 left-4 z-20">
+                   <span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur text-xs font-bold border border-white/10 shadow-lg text-white">Module 02</span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">Media Library Manager</h3>
+                <div class="flex justify-between items-center text-slate-400 mt-4">
+                    <span class="text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Preview</span>
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+    
+        <a href="lensview-discovery-feed.html" class="group relative flex flex-col rounded-3xl overflow-hidden glass-card hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(19,164,236,0.3)]">
+            <div class="aspect-[4/3] w-full overflow-hidden relative">
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex flex-col justify-center items-center text-white backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-5xl mb-2 drop-shadow-lg">open_in_new</span>
+                    <span class="font-bold text-lg drop-shadow-lg">Launch Module</span>
+                </div>
+                <img src="lensview-discovery-feed.png" alt="LensView | Discovery Feed" class="w-full h-full object-cover object-top border-b border-white/10 group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute top-4 left-4 z-20">
+                   <span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur text-xs font-bold border border-white/10 shadow-lg text-white">Module 03</span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">LensView | Discovery Feed</h3>
+                <div class="flex justify-between items-center text-slate-400 mt-4">
+                    <span class="text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Preview</span>
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+    
+        <a href="studio-upload-and-publish.html" class="group relative flex flex-col rounded-3xl overflow-hidden glass-card hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(19,164,236,0.3)]">
+            <div class="aspect-[4/3] w-full overflow-hidden relative">
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex flex-col justify-center items-center text-white backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-5xl mb-2 drop-shadow-lg">open_in_new</span>
+                    <span class="font-bold text-lg drop-shadow-lg">Launch Module</span>
+                </div>
+                <img src="studio-upload-and-publish.png" alt="Studio Upload and Publish" class="w-full h-full object-cover object-top border-b border-white/10 group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute top-4 left-4 z-20">
+                   <span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur text-xs font-bold border border-white/10 shadow-lg text-white">Module 04</span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">Studio Upload and Publish</h3>
+                <div class="flex justify-between items-center text-slate-400 mt-4">
+                    <span class="text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Preview</span>
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+    
+        <a href="enhanced-media-library-manager.html" class="group relative flex flex-col rounded-3xl overflow-hidden glass-card hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(19,164,236,0.3)]">
+            <div class="aspect-[4/3] w-full overflow-hidden relative">
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex flex-col justify-center items-center text-white backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-5xl mb-2 drop-shadow-lg">open_in_new</span>
+                    <span class="font-bold text-lg drop-shadow-lg">Launch Module</span>
+                </div>
+                <img src="enhanced-media-library-manager.png" alt="Enhanced Media Library Manager" class="w-full h-full object-cover object-top border-b border-white/10 group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute top-4 left-4 z-20">
+                   <span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur text-xs font-bold border border-white/10 shadow-lg text-white">Module 05</span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">Enhanced Media Library Manager</h3>
+                <div class="flex justify-between items-center text-slate-400 mt-4">
+                    <span class="text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Preview</span>
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+    
+        <a href="photographer-analytics-dashboard.html" class="group relative flex flex-col rounded-3xl overflow-hidden glass-card hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(19,164,236,0.3)]">
+            <div class="aspect-[4/3] w-full overflow-hidden relative">
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex flex-col justify-center items-center text-white backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-5xl mb-2 drop-shadow-lg">open_in_new</span>
+                    <span class="font-bold text-lg drop-shadow-lg">Launch Module</span>
+                </div>
+                <img src="photographer-analytics-dashboard.png" alt="Photographer Analytics Dashboard" class="w-full h-full object-cover object-top border-b border-white/10 group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute top-4 left-4 z-20">
+                   <span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur text-xs font-bold border border-white/10 shadow-lg text-white">Module 06</span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">Photographer Analytics Dashboard</h3>
+                <div class="flex justify-between items-center text-slate-400 mt-4">
+                    <span class="text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Preview</span>
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+    
+        <a href="explore-discover.html" class="group relative flex flex-col rounded-3xl overflow-hidden glass-card hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(19,164,236,0.3)]">
+            <div class="aspect-[4/3] w-full overflow-hidden relative">
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex flex-col justify-center items-center text-white backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-5xl mb-2 drop-shadow-lg">open_in_new</span>
+                    <span class="font-bold text-lg drop-shadow-lg">Launch Module</span>
+                </div>
+                <img src="explore-discover.png" alt="Explore & Discover" class="w-full h-full object-cover object-top border-b border-white/10 group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute top-4 left-4 z-20">
+                   <span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur text-xs font-bold border border-white/10 shadow-lg text-white">Module 07</span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">Explore & Discover</h3>
+                <div class="flex justify-between items-center text-slate-400 mt-4">
+                    <span class="text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Preview</span>
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+    
+        <a href="community-social-feed.html" class="group relative flex flex-col rounded-3xl overflow-hidden glass-card hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(19,164,236,0.3)]">
+            <div class="aspect-[4/3] w-full overflow-hidden relative">
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex flex-col justify-center items-center text-white backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-5xl mb-2 drop-shadow-lg">open_in_new</span>
+                    <span class="font-bold text-lg drop-shadow-lg">Launch Module</span>
+                </div>
+                <img src="community-social-feed.png" alt="Community & Social Feed" class="w-full h-full object-cover object-top border-b border-white/10 group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute top-4 left-4 z-20">
+                   <span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur text-xs font-bold border border-white/10 shadow-lg text-white">Module 08</span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">Community & Social Feed</h3>
+                <div class="flex justify-between items-center text-slate-400 mt-4">
+                    <span class="text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Preview</span>
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+    
+        <a href="photographer-public-profile.html" class="group relative flex flex-col rounded-3xl overflow-hidden glass-card hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(19,164,236,0.3)]">
+            <div class="aspect-[4/3] w-full overflow-hidden relative">
+                <div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex flex-col justify-center items-center text-white backdrop-blur-sm">
+                    <span class="material-symbols-outlined text-5xl mb-2 drop-shadow-lg">open_in_new</span>
+                    <span class="font-bold text-lg drop-shadow-lg">Launch Module</span>
+                </div>
+                <img src="photographer-public-profile.png" alt="Photographer Public Profile" class="w-full h-full object-cover object-top border-b border-white/10 group-hover:scale-105 transition-transform duration-700"/>
+                <div class="absolute top-4 left-4 z-20">
+                   <span class="px-3 py-1 rounded-full bg-black/60 backdrop-blur text-xs font-bold border border-white/10 shadow-lg text-white">Module 09</span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="text-xl font-bold group-hover:text-primary transition-colors mb-2">Photographer Public Profile</h3>
+                <div class="flex justify-between items-center text-slate-400 mt-4">
+                    <span class="text-sm font-medium flex items-center gap-1"><span class="material-symbols-outlined text-sm">visibility</span> Preview</span>
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </div>
+            </div>
+        </a>
+    
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 mt-20 py-12 px-6 lg:px-20 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 LensView OS. All modules dynamically linked for seamless experience.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Enhanced Media Library Manager | LensView</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "sidebar-dark": "#101c22",
+                        "background-light": "#f6f7f8",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            .material-symbols-outlined {
+                font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+            .fill-icon {
+                font-variation-settings: 'FILL' 1;
+            }
+        }
+        input[type="range"] {
+            @apply h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary;
+        }
+    </style>
+</head>
+<body class="bg-background-light font-display text-slate-900 antialiased h-screen flex overflow-hidden">
+<aside class="w-64 bg-sidebar-dark text-slate-300 flex flex-col shrink-0">
+<div class="p-6 flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">filter_tilt_shift</span>
+<h2 class="text-xl font-extrabold tracking-tight text-white">LensView</h2>
+</div>
+<nav class="flex-1 px-4 py-4 space-y-1">
+<div class="pb-4">
+<p class="px-3 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Library</p>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary rounded-lg font-semibold transition-colors" href="#">
+<span class="material-symbols-outlined">photo_library</span>
+                    All Photos
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-white/5 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+                    Recent
+                </a>
+</div>
+<div class="pt-4 border-t border-white/10">
+<div class="flex items-center justify-between px-3 mb-2">
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Collections</p>
+<button class="material-symbols-outlined text-sm hover:text-white">add</button>
+</div>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-white/5 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">folder</span>
+                    Iceland 2023
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-white/5 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">folder</span>
+                    Fine Art Series
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-white/5 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">folder</span>
+                    Portraits
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 hover:bg-white/5 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">folder</span>
+                    Minimalism
+                </a>
+</div>
+</nav>
+<div class="p-4 border-t border-white/10 bg-black/20">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-cover bg-center border border-white/10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNl95N3h8fx0t6-iPqPMyP3cSlqWy9jDe_-ZEqdOphvuQbrOBn1yIjQpv7K2x82_Juh7YZHQgb8P2t_bFLz9c22r4KYgQfVDsOSd7dhDjo0dECOrVIDOi-bSLcb9tmF6Y9C9Lf70ouUAyfGOvs-RY-k0heFZFErg7mRSGHeVD3j-5NeLki4czfoBDoDHHi_55NP0G16iqLByIx1lk1dGu7NIIwZnWZ_LtsRtpJgDO-p9Y5Ca6Qrczx5x9pNds9V6eCLhZUdVOPzuE')"></div>
+<div class="flex-1 min-w-0">
+<p class="text-sm font-semibold text-white truncate">Alex Rivera</p>
+<p class="text-xs text-slate-500 truncate">Pro Plan</p>
+</div>
+<span class="material-symbols-outlined text-slate-500 hover:text-white cursor-pointer">settings</span>
+</div>
+</div>
+</aside>
+<div class="flex-1 flex flex-col min-w-0 bg-white overflow-hidden relative">
+<main class="flex-1 flex flex-col overflow-hidden">
+<header class="h-20 border-b border-slate-200 px-8 flex items-center justify-between bg-white shrink-0">
+<div class="flex items-center gap-4">
+<h1 class="text-2xl font-bold text-slate-900">All Photos</h1>
+<span class="text-slate-400 font-medium text-sm">1,248 items</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center border border-slate-200 rounded-lg p-1 mr-2">
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 flex items-center gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+                            Bulk Edit
+                        </button>
+<div class="w-[1px] h-6 bg-slate-200 mx-1"></div>
+<button class="p-2 hover:bg-slate-100 rounded text-slate-600 flex items-center gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-[20px]">drive_file_move</span>
+                            Move to Collection
+                        </button>
+<div class="w-[1px] h-6 bg-slate-200 mx-1"></div>
+<button class="p-2 hover:bg-red-50 text-red-600 rounded flex items-center gap-2 text-sm font-medium">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+                            Delete
+                        </button>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2.5 rounded-lg text-sm font-bold transition-all flex items-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg">cloud_upload</span>
+<span>Upload New</span>
+</button>
+</div>
+</header>
+<div class="px-8 py-4 border-b border-slate-100 bg-slate-50/50 flex items-center justify-between shrink-0">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<input class="rounded border-slate-300 text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-sm font-semibold text-slate-600">Select All</span>
+</div>
+<div class="h-4 w-[1px] bg-slate-200"></div>
+<div class="flex items-center gap-2 text-sm text-slate-500">
+<span>Sort by:</span>
+<button class="font-semibold text-slate-900 flex items-center gap-1">
+                            Date Uploaded
+                            <span class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="relative">
+<select class="appearance-none bg-white border border-slate-200 rounded-lg pl-3 pr-8 py-1.5 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-slate-600 font-medium">
+<option>Status</option>
+<option>Published</option>
+<option>Draft</option>
+<option>Private</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-xl">expand_more</span>
+</div>
+<div class="relative">
+<select class="appearance-none bg-white border border-slate-200 rounded-lg pl-3 pr-8 py-1.5 text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-slate-600 font-medium">
+<option>File Type</option>
+<option>JPEG</option>
+<option>RAW</option>
+<option>PNG</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none text-xl">expand_more</span>
+</div>
+<div class="relative w-64 ml-2">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-1.5 border border-slate-200 rounded-lg text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" placeholder="Search library..." type="text"/>
+</div>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto p-8">
+<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
+<div class="group relative aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200 cursor-pointer">
+<img alt="Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZnS8bbErO1XqH5yOUUSpcCtaJBNz2L08UIU4vxzlIgHbeCJVxS4LJvUVRo9BO3o5qzKNMf1NxlvBRo8F8zt9f7pUFDlLU7-07NUJJsrZ1l7qDvjBWCYsEkq2XXn9id2Ux121Ofe2tgg13i1jOsAvFMWoOQfwzFHWoFuKK4ozg_3LxdM9PBQosk1O7kB_-qYthjF9hbv5OQEbXx2SAW8XB_E3Jp84oZLNmgJXHjQAx_qwUQrhSZNO55d2To92mqbZSQfM6Vpr0rLM"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<input class="self-start rounded border-white/20 bg-white/10 text-primary focus:ring-primary size-5" type="checkbox"/>
+</div>
+<div class="absolute bottom-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-green-500 text-white rounded-md text-[10px] font-bold uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[14px] fill-icon">check_circle</span>
+                            Published
+                        </div>
+</div>
+<div class="group relative aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200 ring-2 ring-primary cursor-pointer shadow-xl shadow-primary/10">
+<img alt="Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcCBBXhr-PUJSmYCCSjrkUDzMUjulrzIzEJH8fO5cKRZbqe069zsiIm2piuyYqo-wcuV2AsiVNrOyRSIcxJncautHAb3WIbL4nsPw8e985ZuF8UUFZSpe3rC3jXlyAhYwMQmlChkGg0T9ZQy7P4grS5WhMYLVTdSzqPMcHemKy8jzLaTW5eyoLBhORPqYl4WkTTm1ZiO6BRkse_zmRZJpxCY0vNZ2RV3inpxeIiydiEEyxiMayC-mJ-lWvzpm3F4eIUcqGkRQb7fs"/>
+<div class="absolute inset-0 bg-black/10 p-3 flex flex-col justify-between">
+<input checked="" class="self-start rounded border-white/20 bg-white/10 text-primary focus:ring-primary size-5" type="checkbox"/>
+</div>
+<div class="absolute bottom-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-slate-700 text-white rounded-md text-[10px] font-bold uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[14px] fill-icon">edit_note</span>
+                            Draft
+                        </div>
+</div>
+<div class="group relative aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200 cursor-pointer">
+<img alt="Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbmeMwGQiMYruvkXMFJmE85k83iO80FI-ceKv0zbMaAWJIJIqGZ0P0Dgexv3wShymQRzC4zXf_zFUB8vDL3XR0DSGc-fLQwCKLiXXIzqbt-gc7Rh-7ngLjinbqk8PuhjfgQQLiyZKqESkYXVhwZc1W7NSUmH85CCwpCcCHe6EgKEvPouXp1-tIx77ggDyneYXZyxTMt9LnQ_NrhFx6qOaXnI1aS_nmP_Rf6NxpIbz7OuZCpxMsxzSLy_wpdBoDy5fVFPEVchdb7Vw"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<input class="self-start rounded border-white/20 bg-white/10 text-primary focus:ring-primary size-5" type="checkbox"/>
+</div>
+<div class="absolute bottom-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-amber-600 text-white rounded-md text-[10px] font-bold uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[14px] fill-icon">lock</span>
+                            Private
+                        </div>
+</div>
+<div class="group relative aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200 cursor-pointer">
+<img alt="Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXjLSJopsCs-vaSHHMuWJqvaNQmkdlorG5I9PRIa_2NFsJ5faVwDw_72oHGdmIiOIn4G6S-S6Va5J6OJlJKFz3mL6EiERd3GYcYHxCCqCcz0vHx_eMRBJm2X3ss41qCn1eKVNXs8dxF5cFQuN7mgqBPOpqAzeE9S8n6V2eCAnkLQDkJViiANQTOvsrcm16VpSM2FA3sCShDtf483uAFLN3H1gKejUYMoyqMwF2NS_Z4j18ubr-noQfz-UkwxjH-p_CVSB7_KzH1Oc"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<input class="self-start rounded border-white/20 bg-white/10 text-primary focus:ring-primary size-5" type="checkbox"/>
+</div>
+<div class="absolute bottom-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-green-500 text-white rounded-md text-[10px] font-bold uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[14px] fill-icon">check_circle</span>
+                            Published
+                        </div>
+</div>
+<div class="group relative aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200 cursor-pointer">
+<img alt="Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWM1kKT2BiHg6jbTWLM_e23xVnSCnstSML7ybbvmeMH5SZTiRKwIi9t9HdW2likQnZpHWNY3SWkr83DNVkqlXAva2Nj-roGjQ1UdQ6TO-GV6r3LKe3C4JfybS55-cpJjP0UPE3TqJ3_KlCC75tazY-YTmaC3E7KGc-zK--haqdEKMi-OA9FmrzbaD30_1pb4s4q1WcCJe5dsQinBrh3Ak2MUtfs7FC2TkFdUZfi35IjXmD5qMST4koQcK9sCksZOJ4p62W54TKkeg"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<input class="self-start rounded border-white/20 bg-white/10 text-primary focus:ring-primary size-5" type="checkbox"/>
+</div>
+<div class="absolute bottom-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-green-500 text-white rounded-md text-[10px] font-bold uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[14px] fill-icon">check_circle</span>
+                            Published
+                        </div>
+</div>
+<div class="group relative aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200 cursor-pointer">
+<img alt="Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaNl6gcmJFKyUN161wFwwfebakKt8aQho9zLJkRB9DcRSao6uTy6DxMYQFWtEV3iNglVpfmA4iHoF16AbU0pTRkfS_rQ3592FlFgvqi7XE7s2tkA0dWE2lcsn-4Z0xG8BKJUSS22tNXQ3nYnOwz5G2KyaFxbFHRqA6Rj-FfbztgoYqlaTE-aYiq3wkFCfpJjsX112akGoms_gb50fbO3ENVwcsTlvbd_AN9B_g2lYi8UN2rcpP103Utaci03RLiMnwpvK7X1P2JSM"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<input class="self-start rounded border-white/20 bg-white/10 text-primary focus:ring-primary size-5" type="checkbox"/>
+</div>
+<div class="absolute bottom-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-green-500 text-white rounded-md text-[10px] font-bold uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[14px] fill-icon">check_circle</span>
+                            Published
+                        </div>
+</div>
+<div class="group relative aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200 cursor-pointer">
+<img alt="Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtcYkWnZiGYLv15JP6FDJ_HUlC8tIiM525kPTMBwTHtpMjfo-Kfx5ejqs62AwAvzc6iZUv9F6YsfpahIKVTKMSte5SZ_xMvh37zAIr3yIA5b8Y_B1VxfzBUq0qSOkbh2JYqh06T_vY3JSybpwBOvE71bKwQXV7TZ_i3NHlXT4n59v8M1wIo0N4tyNJycUAbUoAk7qhAItFOQ97IJRLp7FYjEthbHEB0YaxiW-HFqW8RzhOvezwAJo_CFZDGbQc1xZLXfw-LNdJrOQ"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<input class="self-start rounded border-white/20 bg-white/10 text-primary focus:ring-primary size-5" type="checkbox"/>
+</div>
+<div class="absolute bottom-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-green-500 text-white rounded-md text-[10px] font-bold uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[14px] fill-icon">check_circle</span>
+                            Published
+                        </div>
+</div>
+<div class="group relative aspect-square rounded-xl overflow-hidden bg-slate-100 border border-slate-200 cursor-pointer">
+<img alt="Photo" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoI21c16SXI_UqtFrOHwomE43_fHwvNN01ynhFa8QDMrSPKZ0HwQ_lE0xvZFOcLLiVFvf-FHgUZrAOcKVmFaZJ6ZaMMabxl2IflOFt0iHAJxS3Fd1nUWDkcMXoDrjhEk2-0rfqURsdn9mY4Lf5d61pHmiWtAyMBlGTnpi0kuJgX5XxpwImyyVJfQasUtQSeIqAh66hOnbLDvdpM1zcaBk3fL-oTq00EV5MfrXQ9XEsCE425ybUvKzXoDkta-ncSUe_3SJ1E3Lu750"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity p-3 flex flex-col justify-between">
+<input class="self-start rounded border-white/20 bg-white/10 text-primary focus:ring-primary size-5" type="checkbox"/>
+</div>
+<div class="absolute bottom-3 right-3 flex items-center gap-1.5 px-2 py-1 bg-slate-700 text-white rounded-md text-[10px] font-bold uppercase tracking-wider shadow-sm">
+<span class="material-symbols-outlined text-[14px] fill-icon">edit_note</span>
+                            Draft
+                        </div>
+</div>
+</div>
+</div>
+</main>
+<aside class="w-80 border-l border-slate-200 bg-white flex flex-col shrink-0 shadow-2xl relative z-10">
+<div class="h-20 border-b border-slate-200 px-6 flex items-center justify-between shrink-0">
+<h3 class="font-bold text-slate-900">Quick Edit</h3>
+<button class="p-1 hover:bg-slate-100 rounded text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-8">
+<div class="space-y-3">
+<div class="aspect-video rounded-lg overflow-hidden bg-slate-100 border border-slate-200 shadow-sm">
+<img alt="Selected Preview" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcCBBXhr-PUJSmYCCSjrkUDzMUjulrzIzEJH8fO5cKRZbqe069zsiIm2piuyYqo-wcuV2AsiVNrOyRSIcxJncautHAb3WIbL4nsPw8e985ZuF8UUFZSpe3rC3jXlyAhYwMQmlChkGg0T9ZQy7P4grS5WhMYLVTdSzqPMcHemKy8jzLaTW5eyoLBhORPqYl4WkTTm1ZiO6BRkse_zmRZJpxCY0vNZ2RV3inpxeIiydiEEyxiMayC-mJ-lWvzpm3F4eIUcqGkRQb7fs"/>
+</div>
+<div class="flex items-center justify-between text-xs text-slate-400">
+<span>DSC0482.RAW</span>
+<span>42.4 MB</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-xs font-bold text-slate-500 uppercase tracking-wider">Tags</label>
+<div class="flex flex-wrap gap-2 p-2 border border-slate-200 rounded-lg min-h-[80px] bg-slate-50/30">
+<span class="inline-flex items-center gap-1 px-2 py-1 bg-white border border-slate-200 rounded text-xs font-medium text-slate-600">
+                                Landscape
+                                <button class="material-symbols-outlined text-sm leading-none">close</button>
+</span>
+<span class="inline-flex items-center gap-1 px-2 py-1 bg-white border border-slate-200 rounded text-xs font-medium text-slate-600">
+                                Mountains
+                                <button class="material-symbols-outlined text-sm leading-none">close</button>
+</span>
+<input class="border-none bg-transparent p-0 focus:ring-0 text-xs flex-1 min-w-[60px]" placeholder="Add tag..." type="text"/>
+</div>
+</div>
+<div class="flex items-center justify-between py-2">
+<div>
+<p class="text-sm font-semibold text-slate-900">Licensing</p>
+<p class="text-xs text-slate-500">Enable commercial usage</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="pt-4 border-t border-slate-100 space-y-6">
+<p class="text-xs font-bold text-slate-500 uppercase tracking-wider">Color Correction</p>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">brightness_medium</span>
+                                    Brightness
+                                </span>
+<span class="text-slate-900 font-mono text-xs">+12</span>
+</div>
+<input class="w-full" max="100" min="-100" type="range" value="12"/>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-sm">
+<span class="text-slate-600 flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">contrast</span>
+                                    Contrast
+                                </span>
+<span class="text-slate-900 font-mono text-xs">-5</span>
+</div>
+<input class="w-full" max="100" min="-100" type="range" value="-5"/>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 border-t border-slate-200 bg-slate-50/50 flex gap-3">
+<button class="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors">
+                    Save Changes
+                </button>
+<button class="px-3 border border-slate-200 rounded-lg text-slate-600 hover:bg-white transition-colors">
+<span class="material-symbols-outlined text-xl align-middle">more_horiz</span>
+</button>
+</div>
+</aside>
+</div>
+
+</body></html>

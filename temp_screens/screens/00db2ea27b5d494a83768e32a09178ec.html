@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inspiration Mood Boards | LensView</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 lg:px-20 py-3">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl">filter_tilt_shift</span>
+<h2 class="text-xl font-extrabold tracking-tight">LensView</h2>
+</div>
+<div class="hidden md:flex flex-1 min-w-[300px]">
+<div class="relative w-full group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border-none bg-slate-100 dark:bg-slate-800 rounded-lg text-sm placeholder-slate-400 focus:ring-2 focus:ring-primary/50 transition-all" placeholder="Search mood boards, styles, or inspiration..." type="text"/>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-600 dark:text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Explore</a>
+<a class="hover:text-primary transition-colors text-primary" href="#">My Boards</a>
+<a class="hover:text-primary transition-colors" href="#">Community</a>
+<a class="hover:text-primary transition-colors" href="#">Analytics</a>
+</nav>
+<div class="flex items-center gap-4 border-l border-slate-200 dark:border-slate-800 pl-6">
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>New Board</span>
+</button>
+<div class="size-10 rounded-full border-2 border-primary/20 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNl95N3h8fx0t6-iPqPMyP3cSlqWy9jDe_-ZEqdOphvuQbrOBn1yIjQpv7K2x82_Juh7YZHQgb8P2t_bFLz9c22r4KYgQfVDsOSd7dhDjo0dECOrVIDOi-bSLcb9tmF6Y9C9Lf70ouUAyfGOvs-RY-k0heFZFErg7mRSGHeVD3j-5NeLki4czfoBDoDHHi_55NP0G16iqLByIx1lk1dGu7NIIwZnWZ_LtsRtpJgDO-p9Y5Ca6Qrczx5x9pNds9V6eCLhZUdVOPzuE')"></div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 lg:px-20 py-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<nav class="flex items-center gap-2 text-sm text-slate-500 mb-4">
+<a class="hover:text-primary transition-colors" href="#">Profile</a>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span class="text-slate-300">Mood Boards</span>
+</nav>
+<h1 class="text-4xl font-extrabold tracking-tight">Inspiration Mood Boards</h1>
+<p class="mt-2 text-slate-400 max-w-xl">Curate and organize your visual references, aesthetic directions, and project mood boards in one place.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-slate-100 dark:bg-slate-800 p-2.5 rounded-lg text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">sort</span>
+</button>
+<button class="bg-slate-100 dark:bg-slate-800 p-2.5 rounded-lg text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+<button class="group relative flex flex-col items-center justify-center border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-2xl p-12 hover:border-primary/50 transition-all bg-transparent hover:bg-slate-800/20 aspect-[4/3]">
+<div class="size-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 group-hover:text-primary group-hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined text-3xl">add</span>
+</div>
+<span class="mt-4 font-bold text-lg">Create New Board</span>
+<span class="mt-1 text-sm text-slate-500">Start a new curation</span>
+</button>
+<div class="group cursor-pointer">
+<div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 flex gap-1 p-1">
+<div class="w-2/3 h-full rounded-l-xl overflow-hidden">
+<img alt="Cover large" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTcxfpAgZe0qKXxfbFaD5KV2KpF7TYQ0FKAv84L2Pf_6KuN5luzNX0FQCPzn8dCL8WMzMICt-Qas_USXbH0vI4vhQraVi-27F5jXC5OdALZFi2Y1UDIKQgzErjfrWtQ1G1BL4E8AiitUcbxE-OWH-aKL9j-Y24tvqRFGCVzzL_0EcCfTgNbsx0TbI24c9-1pX-RkuCFVTFlA5z5IjY9Fo5UmsaYIBhm8j2YIiAq2zzbNGthgDGoQY7AgWMj4ehepnB-V13WYXF5Yg"/>
+</div>
+<div class="w-1/3 flex flex-col gap-1">
+<div class="h-1/2 rounded-tr-xl overflow-hidden">
+<img alt="Preview 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZnS8bbErO1XqH5yOUUSpcCtaJBNz2L08UIU4vxzlIgHbeCJVxS4LJvUVRo9BO3o5qzKNMf1NxlvBRo8F8zt9f7pUFDlLU7-07NUJJsrZ1l7qDvjBWCYsEkq2XXn9id2Ux121Ofe2tgg13i1jOsAvFMWoOQfwzFHWoFuKK4ozg_3LxdM9PBQosk1O7kB_-qYthjF9hbv5OQEbXx2SAW8XB_E3Jp84oZLNmgJXHjQAx_qwUQrhSZNO55d2To92mqbZSQfM6Vpr0rLM"/>
+</div>
+<div class="h-1/2 rounded-br-xl overflow-hidden">
+<img alt="Preview 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcCBBXhr-PUJSmYCCSjrkUDzMUjulrzIzEJH8fO5cKRZbqe069zsiIm2piuyYqo-wcuV2AsiVNrOyRSIcxJncautHAb3WIbL4nsPw8e985ZuF8UUFZSpe3rC3jXlyAhYwMQmlChkGg0T9ZQy7P4grS5WhMYLVTdSzqPMcHemKy8jzLaTW5eyoLBhORPqYl4WkTTm1ZiO6BRkse_zmRZJpxCY0vNZ2RV3inpxeIiydiEEyxiMayC-mJ-lWvzpm3F4eIUcqGkRQb7fs"/>
+</div>
+</div>
+</div>
+<div class="mt-4 flex items-start justify-between">
+<div>
+<h3 class="text-xl font-bold group-hover:text-primary transition-colors">Golden Hour Inspiration</h3>
+<div class="flex items-center gap-3 mt-1.5">
+<span class="text-sm font-semibold text-slate-500">42 Items</span>
+<span class="size-1 bg-slate-600 rounded-full"></span>
+<div class="flex items-center gap-1 text-xs font-bold text-slate-400 uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">public</span>
+                            Public
+                        </div>
+</div>
+</div>
+<button class="p-1 text-slate-500 hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 flex gap-1 p-1">
+<div class="w-2/3 h-full rounded-l-xl overflow-hidden">
+<img alt="Cover large" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbmeMwGQiMYruvkXMFJmE85k83iO80FI-ceKv0zbMaAWJIJIqGZ0P0Dgexv3wShymQRzC4zXf_zFUB8vDL3XR0DSGc-fLQwCKLiXXIzqbt-gc7Rh-7ngLjinbqk8PuhjfgQQLiyZKqESkYXVhwZc1W7NSUmH85CCwpCcCHe6EgKEvPouXp1-tIx77ggDyneYXZyxTMt9LnQ_NrhFx6qOaXnI1aS_nmP_Rf6NxpIbz7OuZCpxMsxzSLy_wpdBoDy5fVFPEVchdb7Vw"/>
+</div>
+<div class="w-1/3 flex flex-col gap-1">
+<div class="h-1/2 rounded-tr-xl overflow-hidden">
+<img alt="Preview 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXjLSJopsCs-vaSHHMuWJqvaNQmkdlorG5I9PRIa_2NFsJ5faVwDw_72oHGdmIiOIn4G6S-S6Va5J6OJlJKFz3mL6EiERd3GYcYHxCCqCcz0vHx_eMRBJm2X3ss41qCn1eKVNXs8dxF5cFQuN7mgqBPOpqAzeE9S8n6V2eCAnkLQDkJViiANQTOvsrcm16VpSM2FA3sCShDtf483uAFLN3H1gKejUYMoyqMwF2NS_Z4j18ubr-noQfz-UkwxjH-p_CVSB7_KzH1Oc"/>
+</div>
+<div class="h-1/2 rounded-br-xl overflow-hidden relative">
+<img alt="Preview 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWM1kKT2BiHg6jbTWLM_e23xVnSCnstSML7ybbvmeMH5SZTiRKwIi9t9HdW2likQnZpHWNY3SWkr83DNVkqlXAva2Nj-roGjQ1UdQ6TO-GV6r3LKe3C4JfybS55-cpJjP0UPE3TqJ3_KlCC75tazY-YTmaC3E7KGc-zK--haqdEKMi-OA9FmrzbaD30_1pb4s4q1WcCJe5dsQinBrh3Ak2MUtfs7FC2TkFdUZfi35IjXmD5qMST4koQcK9sCksZOJ4p62W54TKkeg"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+<span class="text-white font-bold">+12</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-4 flex items-start justify-between">
+<div>
+<h3 class="text-xl font-bold group-hover:text-primary transition-colors">Urban Architecture</h3>
+<div class="flex items-center gap-3 mt-1.5">
+<span class="text-sm font-semibold text-slate-500">15 Items</span>
+<span class="size-1 bg-slate-600 rounded-full"></span>
+<div class="flex items-center gap-1 text-xs font-bold text-primary uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">lock</span>
+                            Private
+                        </div>
+</div>
+</div>
+<button class="p-1 text-slate-500 hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 flex gap-1 p-1">
+<div class="w-2/3 h-full rounded-l-xl overflow-hidden">
+<img alt="Cover large" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaNl6gcmJFKyUN161wFwwfebakKt8aQho9zLJkRB9DcRSao6uTy6DxMYQFWtEV3iNglVpfmA4iHoF16AbU0pTRkfS_rQ3592FlFgvqi7XE7s2tkA0dWE2lcsn-4Z0xG8BKJUSS22tNXQ3nYnOwz5G2KyaFxbFHRqA6Rj-FfbztgoYqlaTE-aYiq3wkFCfpJjsX112akGoms_gb50fbO3ENVwcsTlvbd_AN9B_g2lYi8UN2rcpP103Utaci03RLiMnwpvK7X1P2JSM"/>
+</div>
+<div class="w-1/3 flex flex-col gap-1">
+<div class="h-1/2 rounded-tr-xl overflow-hidden">
+<img alt="Preview 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtcYkWnZiGYLv15JP6FDJ_HUlC8tIiM525kPTMBwTHtpMjfo-Kfx5ejqs62AwAvzc6iZUv9F6YsfpahIKVTKMSte5SZ_xMvh37zAIr3yIA5b8Y_B1VxfzBUq0qSOkbh2JYqh06T_vY3JSybpwBOvE71bKwQXV7TZ_i3NHlXT4n59v8M1wIo0N4tyNJycUAbUoAk7qhAItFOQ97IJRLp7FYjEthbHEB0YaxiW-HFqW8RzhOvezwAJo_CFZDGbQc1xZLXfw-LNdJrOQ"/>
+</div>
+<div class="h-1/2 rounded-br-xl overflow-hidden">
+<img alt="Preview 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoI21c16SXI_UqtFrOHwomE43_fHwvNN01ynhFa8QDMrSPKZ0HwQ_lE0xvZFOcLLiVFvf-FHgUZrAOcKVmFaZJ6ZaMMabxl2IflOFt0iHAJxS3Fd1nUWDkcMXoDrjhEk2-0rfqURsdn9mY4Lf5d61pHmiWtAyMBlGTnpi0kuJgX5XxpwImyyVJfQasUtQSeIqAh66hOnbLDvdpM1zcaBk3fL-oTq00EV5MfrXQ9XEsCE425ybUvKzXoDkta-ncSUe_3SJ1E3Lu750"/>
+</div>
+</div>
+</div>
+<div class="mt-4 flex items-start justify-between">
+<div>
+<h3 class="text-xl font-bold group-hover:text-primary transition-colors">Minimalist Portraits</h3>
+<div class="flex items-center gap-3 mt-1.5">
+<span class="text-sm font-semibold text-slate-500">28 Items</span>
+<span class="size-1 bg-slate-600 rounded-full"></span>
+<div class="flex items-center gap-1 text-xs font-bold text-slate-400 uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">public</span>
+                            Public
+                        </div>
+</div>
+</div>
+<button class="p-1 text-slate-500 hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 flex gap-1 p-1">
+<div class="w-2/3 h-full rounded-l-xl overflow-hidden">
+<img alt="Cover large" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZnS8bbErO1XqH5yOUUSpcCtaJBNz2L08UIU4vxzlIgHbeCJVxS4LJvUVRo9BO3o5qzKNMf1NxlvBRo8F8zt9f7pUFDlLU7-07NUJJsrZ1l7qDvjBWCYsEkq2XXn9id2Ux121Ofe2tgg13i1jOsAvFMWoOQfwzFHWoFuKK4ozg_3LxdM9PBQosk1O7kB_-qYthjF9hbv5OQEbXx2SAW8XB_E3Jp84oZLNmgJXHjQAx_qwUQrhSZNO55d2To92mqbZSQfM6Vpr0rLM"/>
+</div>
+<div class="w-1/3 flex flex-col gap-1">
+<div class="h-1/2 rounded-tr-xl overflow-hidden">
+<img alt="Preview 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTcxfpAgZe0qKXxfbFaD5KV2KpF7TYQ0FKAv84L2Pf_6KuN5luzNX0FQCPzn8dCL8WMzMICt-Qas_USXbH0vI4vhQraVi-27F5jXC5OdALZFi2Y1UDIKQgzErjfrWtQ1G1BL4E8AiitUcbxE-OWH-aKL9j-Y24tvqRFGCVzzL_0EcCfTgNbsx0TbI24c9-1pX-RkuCFVTFlA5z5IjY9Fo5UmsaYIBhm8j2YIiAq2zzbNGthgDGoQY7AgWMj4ehepnB-V13WYXF5Yg"/>
+</div>
+<div class="h-1/2 rounded-br-xl overflow-hidden">
+<img alt="Preview 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcCBBXhr-PUJSmYCCSjrkUDzMUjulrzIzEJH8fO5cKRZbqe069zsiIm2piuyYqo-wcuV2AsiVNrOyRSIcxJncautHAb3WIbL4nsPw8e985ZuF8UUFZSpe3rC3jXlyAhYwMQmlChkGg0T9ZQy7P4grS5WhMYLVTdSzqPMcHemKy8jzLaTW5eyoLBhORPqYl4WkTTm1ZiO6BRkse_zmRZJpxCY0vNZ2RV3inpxeIiydiEEyxiMayC-mJ-lWvzpm3F4eIUcqGkRQb7fs"/>
+</div>
+</div>
+</div>
+<div class="mt-4 flex items-start justify-between">
+<div>
+<h3 class="text-xl font-bold group-hover:text-primary transition-colors">Nordic Landscapes</h3>
+<div class="flex items-center gap-3 mt-1.5">
+<span class="text-sm font-semibold text-slate-500">114 Items</span>
+<span class="size-1 bg-slate-600 rounded-full"></span>
+<div class="flex items-center gap-1 text-xs font-bold text-slate-400 uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">public</span>
+                            Public
+                        </div>
+</div>
+</div>
+<button class="p-1 text-slate-500 hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 dark:bg-slate-800 flex gap-1 p-1">
+<div class="w-2/3 h-full rounded-l-xl overflow-hidden">
+<img alt="Cover large" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXjLSJopsCs-vaSHHMuWJqvaNQmkdlorG5I9PRIa_2NFsJ5faVwDw_72oHGdmIiOIn4G6S-S6Va5J6OJlJKFz3mL6EiERd3GYcYHxCCqCcz0vHx_eMRBJm2X3ss41qCn1eKVNXs8dxF5cFQuN7mgqBPOpqAzeE9S8n6V2eCAnkLQDkJViiANQTOvsrcm16VpSM2FA3sCShDtf483uAFLN3H1gKejUYMoyqMwF2NS_Z4j18ubr-noQfz-UkwxjH-p_CVSB7_KzH1Oc"/>
+</div>
+<div class="w-1/3 flex flex-col gap-1">
+<div class="h-1/2 rounded-tr-xl overflow-hidden">
+<img alt="Preview 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbmeMwGQiMYruvkXMFJmE85k83iO80FI-ceKv0zbMaAWJIJIqGZ0P0Dgexv3wShymQRzC4zXf_zFUB8vDL3XR0DSGc-fLQwCKLiXXIzqbt-gc7Rh-7ngLjinbqk8PuhjfgQQLiyZKqESkYXVhwZc1W7NSUmH85CCwpCcCHe6EgKEvPouXp1-tIx77ggDyneYXZyxTMt9LnQ_NrhFx6qOaXnI1aS_nmP_Rf6NxpIbz7OuZCpxMsxzSLy_wpdBoDy5fVFPEVchdb7Vw"/>
+</div>
+<div class="h-1/2 rounded-br-xl overflow-hidden">
+<img alt="Preview 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWM1kKT2BiHg6jbTWLM_e23xVnSCnstSML7ybbvmeMH5SZTiRKwIi9t9HdW2likQnZpHWNY3SWkr83DNVkqlXAva2Nj-roGjQ1UdQ6TO-GV6r3LKe3C4JfybS55-cpJjP0UPE3TqJ3_KlCC75tazY-YTmaC3E7KGc-zK--haqdEKMi-OA9FmrzbaD30_1pb4s4q1WcCJe5dsQinBrh3Ak2MUtfs7FC2TkFdUZfi35IjXmD5qMST4koQcK9sCksZOJ4p62W54TKkeg"/>
+</div>
+</div>
+</div>
+<div class="mt-4 flex items-start justify-between">
+<div>
+<h3 class="text-xl font-bold group-hover:text-primary transition-colors">Project: Mossy Valley</h3>
+<div class="flex items-center gap-3 mt-1.5">
+<span class="text-sm font-semibold text-slate-500">24 Items</span>
+<span class="size-1 bg-slate-600 rounded-full"></span>
+<div class="flex items-center gap-1 text-xs font-bold text-primary uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm">lock</span>
+                            Private
+                        </div>
+</div>
+</div>
+<button class="p-1 text-slate-500 hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-20 flex flex-col items-center">
+<button class="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 px-10 py-3 rounded-xl font-bold transition-all">
+            Load More Boards
+        </button>
+<p class="mt-4 text-sm text-slate-500">Showing 6 of 24 boards</p>
+</div>
+</main>
+<footer class="border-t border-slate-200 dark:border-slate-800 py-12 px-6 lg:px-20 bg-slate-50 dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2 text-primary opacity-80">
+<span class="material-symbols-outlined text-2xl">filter_tilt_shift</span>
+<h2 class="text-lg font-extrabold tracking-tight">LensView</h2>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">© 2024 LensView Photography Platform. Curate your vision.</p>
+<div class="flex gap-6 text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+</div>
+</div>
+</footer>
+
+</body></html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Photographer Public Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 lg:px-20 py-3">
+<div class="max-w-7xl mx-auto flex items-center justify-between gap-8">
+<div class="flex items-center gap-8">
+<a href="index.html" class="flex items-center gap-2 text-primary hover:opacity-80 transition-all cursor-pointer" style="text-decoration:none;">
+            <span class="material-symbols-outlined text-3xl">filter_tilt_shift</span>
+            <h2 class="text-xl font-extrabold tracking-tight">LensView</h2>
+        </a>
+<div class="hidden md:flex flex-1 min-w-[300px]">
+<div class="relative w-full group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400 group-focus-within:text-primary">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-2 border-none bg-slate-100 dark:bg-slate-800 rounded-lg text-sm placeholder-slate-400 focus:ring-2 focus:ring-primary/50 transition-all" placeholder="Search creators, styles, or equipment..." type="text"/>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden lg:flex items-center gap-8 text-sm font-semibold">
+<a class="hover:text-primary transition-colors" href="explore-discover.html">Explore</a>
+<a class="hover:text-primary transition-colors" href="community-social-feed.html">Community</a>
+<a class="hover:text-primary transition-colors" href="#">Jobs</a>
+<a class="hover:text-primary transition-colors" href="#">Messages</a>
+</nav>
+<div class="flex items-center gap-4 border-l border-slate-200 dark:border-slate-800 pl-6">
+<button class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-lg">cloud_upload</span>
+<span>Upload</span>
+</button>
+<div class="size-10 rounded-full border-2 border-primary/20 bg-cover bg-center" data-alt="User profile avatar small" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNl95N3h8fx0t6-iPqPMyP3cSlqWy9jDe_-ZEqdOphvuQbrOBn1yIjQpv7K2x82_Juh7YZHQgb8P2t_bFLz9c22r4KYgQfVDsOSd7dhDjo0dECOrVIDOi-bSLcb9tmF6Y9C9Lf70ouUAyfGOvs-RY-k0heFZFErg7mRSGHeVD3j-5NeLki4czfoBDoDHHi_55NP0G16iqLByIx1lk1dGu7NIIwZnWZ_LtsRtpJgDO-p9Y5Ca6Qrczx5x9pNds9V6eCLhZUdVOPzuE')"></div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto pb-20">
+<!-- Hero Section -->
+<section class="relative">
+<div class="h-[400px] w-full overflow-hidden lg:rounded-b-xl relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent z-10"></div>
+<img alt="Cinematic mountain landscape cover photo" class="w-full h-full object-cover" data-alt="Cinematic mountain landscape cover photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTcxfpAgZe0qKXxfbFaD5KV2KpF7TYQ0FKAv84L2Pf_6KuN5luzNX0FQCPzn8dCL8WMzMICt-Qas_USXbH0vI4vhQraVi-27F5jXC5OdALZFi2Y1UDIKQgzErjfrWtQ1G1BL4E8AiitUcbxE-OWH-aKL9j-Y24tvqRFGCVzzL_0EcCfTgNbsx0TbI24c9-1pX-RkuCFVTFlA5z5IjY9Fo5UmsaYIBhm8j2YIiAq2zzbNGthgDGoQY7AgWMj4ehepnB-V13WYXF5Yg"/>
+</div>
+<!-- Profile Header Overlay -->
+<div class="px-6 lg:px-20 -mt-24 relative z-20 flex flex-col items-center">
+<div class="relative">
+<div class="size-40 lg:size-48 rounded-full border-4 border-background-dark bg-cover bg-center shadow-2xl" data-alt="Professional photographer portrait" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDAeouN-HkyoeRQnyRFyo8rV7W76fzPUGeiEbIRAQjaR028d8j-XTIWjKiw9AyKZzV2SBTEQVelSYm7M6EpqO_XMcf_rIDTo_0HT4hFHhfR6fzwhqIvAOrkYsFOljXqjWhF7x4QLgZNPxoVyGPvy9Zk4ZRwmsbghFihoFJ9UNuUAAHF1bDwkJ9nURLvJ9js8sweku1ZWVaYvvwS2ftw4wnI-Z4OX6ONEssg6nDm7THXvpJIqp3yofOIN4m7350-jqnMpVEgd55hnU')"></div>
+<div class="absolute bottom-4 right-4 bg-primary text-white p-1 rounded-full border-2 border-background-dark flex items-center justify-center">
+<span class="material-symbols-outlined text-sm">verified</span>
+</div>
+</div>
+<div class="mt-6 text-center max-w-2xl">
+<h1 class="text-4xl font-bold tracking-tight">Alex Rivera</h1>
+<p class="text-primary font-medium mt-1">Fine Art &amp; Landscape Photographer based in Iceland</p>
+<p class="mt-4 text-slate-400 leading-relaxed">
+                        Capturing the raw beauty of the North. Sony Alpha Ambassador. Exploring the intersection of light, shadow, and silent landscapes.
+                    </p>
+</div>
+<!-- Stats & Actions -->
+<div class="mt-8 flex flex-col items-center gap-8 w-full">
+<div class="flex flex-wrap justify-center gap-4 lg:gap-8">
+<div class="px-8 py-3 bg-slate-100 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800 text-center min-w-[120px]">
+<p class="text-2xl font-bold">12.5k</p>
+<p class="text-xs text-slate-400 uppercase tracking-widest font-semibold mt-1">Followers</p>
+</div>
+<div class="px-8 py-3 bg-slate-100 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800 text-center min-w-[120px]">
+<p class="text-2xl font-bold">840</p>
+<p class="text-xs text-slate-400 uppercase tracking-widest font-semibold mt-1">Following</p>
+</div>
+<div class="px-8 py-3 bg-slate-100 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-800 text-center min-w-[120px]">
+<p class="text-2xl font-bold">2.1M</p>
+<p class="text-xs text-slate-400 uppercase tracking-widest font-semibold mt-1">Total Views</p>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="bg-primary hover:bg-primary/90 text-white px-10 py-3 rounded-xl font-bold shadow-lg shadow-primary/20 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">person_add</span>
+                            Follow
+                        </button>
+<button class="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 px-10 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">mail</span>
+                            Message
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Navigation Tabs -->
+<div class="mt-16 border-b border-slate-200 dark:border-slate-800 px-6 lg:px-20">
+<div class="flex gap-12">
+<a class="border-b-2 border-primary pb-4 text-sm font-bold flex items-center gap-2 text-primary" href="#">
+<span class="material-symbols-outlined text-lg">grid_view</span>
+                    Gallery
+                </a>
+<a class="border-b-2 border-transparent pb-4 text-sm font-bold flex items-center gap-2 text-slate-400 hover:text-slate-100 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">folder_copy</span>
+                    Collections
+                </a>
+<a class="border-b-2 border-transparent pb-4 text-sm font-bold flex items-center gap-2 text-slate-400 hover:text-slate-100 transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">movie</span>
+                    Videos
+                </a>
+</div>
+</div>
+<!-- Gallery Grid (Pinterest Style Masonry feel) -->
+<div class="mt-8 px-6 lg:px-20">
+<div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+<!-- Gallery Card 1 -->
+<div class="break-inside-avoid group relative overflow-hidden rounded-xl bg-slate-800">
+<img alt="Misty morning lake reflection" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Misty morning lake reflection" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZnS8bbErO1XqH5yOUUSpcCtaJBNz2L08UIU4vxzlIgHbeCJVxS4LJvUVRo9BO3o5qzKNMf1NxlvBRo8F8zt9f7pUFDlLU7-07NUJJsrZ1l7qDvjBWCYsEkq2XXn9id2Ux121Ofe2tgg13i1jOsAvFMWoOQfwzFHWoFuKK4ozg_3LxdM9PBQosk1O7kB_-qYthjF9hbv5OQEbXx2SAW8XB_E3Jp84oZLNmgJXHjQAx_qwUQrhSZNO55d2To92mqbZSQfM6Vpr0rLM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<div class="flex items-center justify-between text-white">
+<span class="text-sm font-medium">Silent Waters</span>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">favorite</span>
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Card 2 -->
+<div class="break-inside-avoid group relative overflow-hidden rounded-xl bg-slate-800">
+<img alt="Snowy mountain peaks at dusk" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Snowy mountain peaks at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcCBBXhr-PUJSmYCCSjrkUDzMUjulrzIzEJH8fO5cKRZbqe069zsiIm2piuyYqo-wcuV2AsiVNrOyRSIcxJncautHAb3WIbL4nsPw8e985ZuF8UUFZSpe3rC3jXlyAhYwMQmlChkGg0T9ZQy7P4grS5WhMYLVTdSzqPMcHemKy8jzLaTW5eyoLBhORPqYl4WkTTm1ZiO6BRkse_zmRZJpxCY0vNZ2RV3inpxeIiydiEEyxiMayC-mJ-lWvzpm3F4eIUcqGkRQb7fs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<div class="flex items-center justify-between text-white">
+<span class="text-sm font-medium">Glacial Echoes</span>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">favorite</span>
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Card 3 -->
+<div class="break-inside-avoid group relative overflow-hidden rounded-xl bg-slate-800">
+<img alt="Sunbeams through dense forest" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sunbeams through dense forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbmeMwGQiMYruvkXMFJmE85k83iO80FI-ceKv0zbMaAWJIJIqGZ0P0Dgexv3wShymQRzC4zXf_zFUB8vDL3XR0DSGc-fLQwCKLiXXIzqbt-gc7Rh-7ngLjinbqk8PuhjfgQQLiyZKqESkYXVhwZc1W7NSUmH85CCwpCcCHe6EgKEvPouXp1-tIx77ggDyneYXZyxTMt9LnQ_NrhFx6qOaXnI1aS_nmP_Rf6NxpIbz7OuZCpxMsxzSLy_wpdBoDy5fVFPEVchdb7Vw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<div class="flex items-center justify-between text-white">
+<span class="text-sm font-medium">Golden Hours</span>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">favorite</span>
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Card 4 -->
+<div class="break-inside-avoid group relative overflow-hidden rounded-xl bg-slate-800">
+<img alt="Vast green valley landscape" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vast green valley landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXjLSJopsCs-vaSHHMuWJqvaNQmkdlorG5I9PRIa_2NFsJ5faVwDw_72oHGdmIiOIn4G6S-S6Va5J6OJlJKFz3mL6EiERd3GYcYHxCCqCcz0vHx_eMRBJm2X3ss41qCn1eKVNXs8dxF5cFQuN7mgqBPOpqAzeE9S8n6V2eCAnkLQDkJViiANQTOvsrcm16VpSM2FA3sCShDtf483uAFLN3H1gKejUYMoyqMwF2NS_Z4j18ubr-noQfz-UkwxjH-p_CVSB7_KzH1Oc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<div class="flex items-center justify-between text-white">
+<span class="text-sm font-medium">Valley of Peace</span>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">favorite</span>
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Card 5 -->
+<div class="break-inside-avoid group relative overflow-hidden rounded-xl bg-slate-800">
+<img alt="Dramatic sunset over canyon" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dramatic sunset over canyon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWM1kKT2BiHg6jbTWLM_e23xVnSCnstSML7ybbvmeMH5SZTiRKwIi9t9HdW2likQnZpHWNY3SWkr83DNVkqlXAva2Nj-roGjQ1UdQ6TO-GV6r3LKe3C4JfybS55-cpJjP0UPE3TqJ3_KlCC75tazY-YTmaC3E7KGc-zK--haqdEKMi-OA9FmrzbaD30_1pb4s4q1WcCJe5dsQinBrh3Ak2MUtfs7FC2TkFdUZfi35IjXmD5qMST4koQcK9sCksZOJ4p62W54TKkeg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<div class="flex items-center justify-between text-white">
+<span class="text-sm font-medium">Crimson Horizon</span>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">favorite</span>
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Card 6 -->
+<div class="break-inside-avoid group relative overflow-hidden rounded-xl bg-slate-800">
+<img alt="Hiker overlooking mountain range" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hiker overlooking mountain range" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaNl6gcmJFKyUN161wFwwfebakKt8aQho9zLJkRB9DcRSao6uTy6DxMYQFWtEV3iNglVpfmA4iHoF16AbU0pTRkfS_rQ3592FlFgvqi7XE7s2tkA0dWE2lcsn-4Z0xG8BKJUSS22tNXQ3nYnOwz5G2KyaFxbFHRqA6Rj-FfbztgoYqlaTE-aYiq3wkFCfpJjsX112akGoms_gb50fbO3ENVwcsTlvbd_AN9B_g2lYi8UN2rcpP103Utaci03RLiMnwpvK7X1P2JSM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<div class="flex items-center justify-between text-white">
+<span class="text-sm font-medium">The Explorer</span>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">favorite</span>
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Card 7 -->
+<div class="break-inside-avoid group relative overflow-hidden rounded-xl bg-slate-800">
+<img alt="Old wooden bridge in autumn forest" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Old wooden bridge in autumn forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtcYkWnZiGYLv15JP6FDJ_HUlC8tIiM525kPTMBwTHtpMjfo-Kfx5ejqs62AwAvzc6iZUv9F6YsfpahIKVTKMSte5SZ_xMvh37zAIr3yIA5b8Y_B1VxfzBUq0qSOkbh2JYqh06T_vY3JSybpwBOvE71bKwQXV7TZ_i3NHlXT4n59v8M1wIo0N4tyNJycUAbUoAk7qhAItFOQ97IJRLp7FYjEthbHEB0YaxiW-HFqW8RzhOvezwAJo_CFZDGbQc1xZLXfw-LNdJrOQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<div class="flex items-center justify-between text-white">
+<span class="text-sm font-medium">Path to Unknown</span>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">favorite</span>
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Card 8 -->
+<div class="break-inside-avoid group relative overflow-hidden rounded-xl bg-slate-800">
+<img alt="Single tree in misty field" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Single tree in misty field" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoI21c16SXI_UqtFrOHwomE43_fHwvNN01ynhFa8QDMrSPKZ0HwQ_lE0xvZFOcLLiVFvf-FHgUZrAOcKVmFaZJ6ZaMMabxl2IflOFt0iHAJxS3Fd1nUWDkcMXoDrjhEk2-0rfqURsdn9mY4Lf5d61pHmiWtAyMBlGTnpi0kuJgX5XxpwImyyVJfQasUtQSeIqAh66hOnbLDvdpM1zcaBk3fL-oTq00EV5MfrXQ9XEsCE425ybUvKzXoDkta-ncSUe_3SJ1E3Lu750"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+<div class="flex items-center justify-between text-white">
+<span class="text-sm font-medium">Loneliness</span>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">favorite</span>
+<span class="material-symbols-outlined text-xl cursor-pointer hover:text-primary">add_circle</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="mt-16 flex justify-center">
+<button class="bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 px-8 py-3 rounded-xl font-bold transition-all">
+                    Load More Work
+                </button>
+</div>
+</div>
+</main>
+<footer class="border-t border-slate-200 dark:border-slate-800 py-12 px-6 lg:px-20 bg-slate-50 dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<a href="index.html" class="flex items-center gap-2 text-primary hover:opacity-80 transition-all cursor-pointer" style="text-decoration:none;">
+            <span class="material-symbols-outlined text-3xl">filter_tilt_shift</span>
+            <h2 class="text-xl font-extrabold tracking-tight">LensView</h2>
+        </a>
+<p class="text-sm text-slate-500 dark:text-slate-400">© 2024 LensView Photography Platform. All rights reserved.</p>
+<div class="flex gap-6 text-slate-400">
+<a class="hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms</a>
+<a class="hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+</div>
+</footer>
+
+      <div class="fixed bottom-6 right-6 z-[9999]">
+          <a href="index.html" class="flex items-center gap-2 bg-[#13a4ec] text-white px-5 py-3 rounded-full shadow-2xl hover:bg-[#108ece] transition-all font-bold group" style="text-decoration: none;">
+              <span class="material-symbols-outlined text-sm">home</span>
+              Return to Hub
+          </a>
+      </div>
+    </body></html>
